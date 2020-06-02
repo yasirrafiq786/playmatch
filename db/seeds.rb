@@ -23,4 +23,7 @@ test_booking1.users << test_user2
 test_team.users << test_user1
 test_team.users << test_user2
 
-#team.save
+#################################
+test_sport1 = Sport.create(name: "Volleyball")
+test_sport2 = Sport.create(name: "Tennis")
+test_sport2 = Sport.create(name: "Basketball")
