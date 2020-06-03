@@ -2,6 +2,7 @@
 <p>
 <% @availabilities.each do |availability|%>
 <%= availability.user.first_name %>
-<%= availability.start_time %> - <%= availability.end_time %>
+<%= availability.start_time.strftime("%b %d %Y, %H:%M") %> - <%= availability.end_time.strftime("%b %d %Y, %H:%M") %>
+<%= availability.sport.name %>
 <% end%>
 </p>
