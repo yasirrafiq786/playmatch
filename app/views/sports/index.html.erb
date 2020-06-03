@@ -1,0 +1,7 @@
+<h1>Sports index page</h1>
+
+<% @sports.each do |sport| %>
+<%= render 'shared/sports_card', sport: sport %>
+<% end %>
+
+<%= link_to 'Back to home', root_path %>
