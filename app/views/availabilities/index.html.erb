@@ -1,8 +1,10 @@
 <h1>Availabilities#index</h1>
-<p>
 <% @availabilities.each do |availability|%>
+<p>
 <%= availability.user.first_name %>
 <%= availability.start_time.strftime("%b %d %Y, %H:%M") %> - <%= availability.end_time.strftime("%b %d %Y, %H:%M") %>
 <%= availability.sport.name %>
-<% end%>
 </p>
+<% end%>
+
+
