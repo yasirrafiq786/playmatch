@@ -1,0 +1,4 @@
+<h1>Bookings</h1>
+<%=simple_form_for [@sport, @booking] do |f|%>
+    <%= f.input :date_time, as: :datetime, label: "Please enter Date and Time you want to play" %>
+<% end%>
