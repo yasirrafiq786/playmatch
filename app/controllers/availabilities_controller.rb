@@ -1,6 +1,7 @@
 class AvailabilitiesController < ApplicationController
   def index
     @availabilities = Availability.all
+    @bookings = Booking.all
   end
 
   def new

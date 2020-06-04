@@ -4,7 +4,10 @@
 <%= availability.user.first_name %>
 <%= availability.start_time.strftime("%b %d %Y, %H:%M") %> - <%= availability.end_time.strftime("%b %d %Y, %H:%M") %>
 <%= availability.sport.name %>
+<%= link_to 'Play',  availability_bookings_path(availability), method: "post" %>
 </p>
+
 <% end%>
+
 
 
