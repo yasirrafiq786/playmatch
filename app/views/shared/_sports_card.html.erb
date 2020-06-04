@@ -5,7 +5,7 @@
     <div class="card-body">
       <h5 class="card-title"><%= sport.name %></h5>
       <p class="card-text">Example text</p>
-      <a href="#" class="btn btn-primary">See players</a>
+      <%= link_to 'See players', sport_path(sport), class: "btn btn-primary" %>
     </div>
   </div>
 
