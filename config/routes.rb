@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   if Rails.env.development?
     get '/navigation', to: 'pages#navigation'
+    get '/kitchensink', to: 'pages#kitchensink'
   end
 end
