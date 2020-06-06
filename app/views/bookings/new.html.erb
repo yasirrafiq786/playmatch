@@ -1,4 +1,5 @@
+
 <%= simple_form_for [@availability, @booking] do |f| %>
-<%= f.input :date, as: :date, label: "What date you want to play?" %>
+<%= f.input :date, as: :string, input_html: { id: "booking-date"}%>
 <%= f.button :submit %>
 <% end%>
