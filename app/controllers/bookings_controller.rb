@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.order(:id)
   end
   
   def show
@@ -20,6 +20,18 @@ class BookingsController < ApplicationController
       flash[:alert] = "Unable to made booking"
       redirect_to availability_path(@availability)
     end
+  end
+
+  def update
+    
+    @booking = Booking.find(params[:id])
+    if @booking.update(params.require(:booking).permit(:status))
+      flash[:notice] = "You have #{@booking.status} the booking"
+      redirect_to bookings_path
+    else
+      flash[:alert] = "Unable to perform the action"
+    end
+    
   end
 
   private
