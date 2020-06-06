@@ -8,7 +8,7 @@ class Availability < ApplicationRecord
 
   def start_time_cannot_be_after_end_time
     if start_time > end_time
-      errors.add(:start_time, "cannot be after the end date")
+      errors.add(:start_time, "cannot be after the end time")
     end
   end
 end
