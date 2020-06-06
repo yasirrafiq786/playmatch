@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
   def update
     
     @booking = Booking.find(params[:id])
-    if @booking.update(params.require(:booking).permit(:status))
+    if @booking.update(booking_params_status)
       flash[:notice] = "You have #{@booking.status} the booking"
       redirect_to bookings_path
     else
@@ -38,5 +38,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.permit(:status)
+  end
+
+  def booking_params_status
+    params.require(:booking).permit(:status)
   end
 end
