@@ -7,4 +7,5 @@ class Booking < ApplicationRecord
   belongs_to :sport
 
   validates :status, inclusion: { in: ["pending", "confirm", "reject"]}
+
 end
