@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :sports, only: [:index, :show]
   resources :availabilities , only: [:index, :new, :create, :show] do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [ :index, :show, :update ]
 
