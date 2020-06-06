@@ -1,0 +1,68 @@
+.banner {
+  position: relative;
+  max-height: 354px;
+}
+
+.banner-heading {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+  object-fit: cover;
+  height: 354px;
+}
+
+.banner h3 {
+  color: white;
+  margin-left: 10px;
+}
+
+.banner h5 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin: 0 10px 0 20px;
+}
+
+.banner p {
+  position: absolute;
+  color: white;
+  top: 100px;
+  margin-left: 10px;
+  margin-right: 120px;
+  font-size: 24px;
+}
+
+.sign-in {
+  display: flex;
+}
+
+.wrap{
+  position: absolute;
+  top: 230px;
+  left: 10px;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  border: 1px solid rgb(220, 220, 220);
+  padding: 15px;
+  height: 32px;
+  width: 200px;
+  border-radius: 16px;
+  color: #9DBFAF;
+  font-size: 24px;
+}
+
+.searchTerm:focus{
+  color: black;
+}
