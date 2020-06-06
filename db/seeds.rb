@@ -1,0 +1,6 @@
+yasir = User.create(first_name:"Yasir", email:"yasir@yasir.com", password:"123abc")
+andy = User.create(first_name:"Andy", email:"andy@andy.com", password:"123abc")
+squash = Sport.create(name:"Squash")
+badminton = Sport.create(name:"Badminton")
+yasir_availability = Availability.create(start_time:Date.today, end_time:Date.today+1, sport: squash)
+andy_availability = Availability.create(start_time:Date.today, end_time:Date.today+2, sport: badminton)

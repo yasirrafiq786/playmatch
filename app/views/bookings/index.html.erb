@@ -1,0 +1,11 @@
+<h1>Bookings Detail</h1>
+<% @bookings.each do |booking|%>
+<h4><%= booking.sport.name %></h4>
+<h3>Name of Players</h3>
+<% booking.users.each do |user|%>
+<h3><%= user.first_name %></h3>
+<% end %>
+<h4>Status:<%= booking.status %></h4>
+<p><%= link_to 'Confirm', booking_path(booking, booking: { status: "confirm"}), method: "patch" %> - <%= link_to 'Reject', booking_path(booking, booking: { status: "reject"}), method: 'patch' %> </p>
+ <br>
+<% end%>
