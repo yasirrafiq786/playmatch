@@ -1,0 +1,28 @@
+.how-box{
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding: 5vw;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.how-box-heading {
+  font-size: 20px;
+  margin: 10px;
+  font-weight: bold;
+  color: $blue;
+}
+
+
+.how-box-body {
+  font-size: 14px;
+  margin: 10px;
+
+}
+
+img{
+  margin: 10px;
+}
+
+
