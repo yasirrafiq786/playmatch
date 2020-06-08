@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :availabilities , only: [:index, :new, :create, :show] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [ :index, :show, :update ]
+  resources :bookings, only: [ :index, :show, :update ] do
+    resources :reviews, only: [:new, :create]
+  end
 
   if Rails.env.development?
     get '/navigation', to: 'pages#navigation'
