@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :index, :show, :update ] do
     resources :reviews, only: [:new, :create]
   end
+  resources :reviews, only: :index
 
   if Rails.env.development?
     get '/navigation', to: 'pages#navigation'
