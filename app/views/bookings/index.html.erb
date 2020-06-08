@@ -9,4 +9,6 @@ Date: <%= booking.date %> <br>
 Status:<%= booking.status %> <br>
 <%= link_to 'Confirm', booking_path(booking, booking: { status: "confirm"}), method: "patch" %> - <%= link_to 'Reject', booking_path(booking, booking: { status: "reject"}), method: 'patch' %>
  <br>
+<%= link_to 'Leave a Review', new_booking_review_path(booking) %> <br><br>
+
 <% end%>

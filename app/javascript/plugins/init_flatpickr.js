@@ -1,11 +1,10 @@
 import flatpickr from "flatpickr";
 
 const initFlatpickr = () => {
-    $("#booking-date").flatpickr({
-        altInput: true,
-        altFormat: "F j, Y",
+    $(".flat-pickr").flatpickr({
+        altFormat: "true",
         dateFormat: "Y-m-d",
-        defaultDate: "today"
+        defaultDate: "today",
     });
 }
 

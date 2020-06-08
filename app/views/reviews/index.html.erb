@@ -1,0 +1,5 @@
+<% @reviews.each do |review| %>
+<%= review.reviewer.first_name %> wrote about <%= review.reviewee.first_name %>
+<%= review.content %>
+<%= "⭐" * review.rating %>
+<% end%>
