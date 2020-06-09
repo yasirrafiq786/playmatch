@@ -4,4 +4,8 @@ class Sport < ApplicationRecord
   has_many :availabilities
   has_many :bookings
   has_one_attached :photo
+
+  include AlgoliaSearch
+  algoliasearch do
+  end
 end
