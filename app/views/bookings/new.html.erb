@@ -1,0 +1,5 @@
+
+<%= simple_form_for [@availability, @booking] do |f| %>
+<%= f.input :date, as: :string, input_html: { class: "flat-pickr"}%>
+<%= f.button :submit %>
+<% end%>
