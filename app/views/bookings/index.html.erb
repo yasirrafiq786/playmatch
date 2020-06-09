@@ -1,14 +1,23 @@
 <h1>Bookings Detail</h1>
 <% @bookings.each do |booking|%>
-Sports Name: <%= booking.sport.name %> <br>
-Name of Players <br>
-<% booking.users.each do |user|%>
-<%= user.first_name %> <br>
-<% end %>
-Date: <%= booking.date %> <br>
-Status:<%= booking.status %> <br>
-<%= link_to 'Confirm', booking_path(booking, booking: { status: "confirm"}), method: "patch" %> - <%= link_to 'Reject', booking_path(booking, booking: { status: "reject"}), method: 'patch' %>
- <br>
-<%= link_to 'Leave a Review', new_booking_review_path(booking) %> <br><br>
-
+  <%= link_to 'Leave a Review', new_booking_review_path(booking) %> <br>
+  <br>
+<% end%>
+<%= month_calendar events: @bookings do |date, bookings| %>
+  <%= date.day %>
+  <% bookings.each do |booking| %>
+    <div class= "cal-booking-detail">
+      <div class="cal-booking-desc">
+        <%= booking.sport.name %> with
+        <%  booking.users.each do |user| %>
+          <%  if user != current_user  %>
+            <%= user.first_name %>
+          <% end%>
+        <% end%>
+      </div>
+      <div class="cal-booking-status">
+        Status: <%= booking.status %> - <%= link_to '<i class="fas fa-check"></i>'.html_safe, booking_path(booking, booking: { status: "confirm"}), method: "patch" %> | <%= link_to '<i class="fas fa-times"></i>'.html_safe, booking_path(booking, booking: { status: "reject"}), method: 'patch' %>
+      </div>
+    </div>
+  <% end%>
 <% end%>

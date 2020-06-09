@@ -1,0 +1,41 @@
+.simple-calendar {
+  padding: 8px;
+  .day {
+    font-size: smaller;
+    width: 100px;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {
+    font-family: $body-font;
+  }
+
+  .cal-booking-detail{
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .calendar-heading{
+    display: flex;
+    justify-content: space-between;
+    font-family: $body-font;
+  }
+  
+}
