@@ -1,13 +1,4 @@
-<h1>Availabilities#index</h1>
-<% @availabilities.each do |availability|%>
-<p>
-<%= availability.user.first_name %>
-<%= availability.start_time.strftime("%b %d %Y, %H:%M") %> - <%= availability.end_time.strftime("%b %d %Y, %H:%M") %>
-<%= availability.sport.name %>
-<%= link_to 'Play',  new_availability_booking_path(availability) %>
-</p>
 
-<% end%>
 
 
 
