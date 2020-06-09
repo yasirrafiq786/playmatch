@@ -12,9 +12,17 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
     <%= yield %>
   </body>
+
+    <nav>
+      <ul class = "nav-display">
+        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-home"></i>').html_safe, root_path %> </li>
+        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-comments"></i>').html_safe %> </li>
+        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-bell"></i>').html_safe %> </li>
+        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-calendar-alt"></i>').html_safe, bookings_path %> </li>
+        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-cog"></i>').html_safe, navigation_path %> </li>
+      </ul>
+    </nav>
 </html>
