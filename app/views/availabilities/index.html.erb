@@ -1,15 +1,13 @@
+<h1>Availabilities#index</h1>
+<% @availabilities.each do |availability|%>
+<p>
+<%= availability.user.first_name %>
+<%= availability.start_time.strftime("%b %d %Y, %H:%M") %> - <%= availability.end_time.strftime("%b %d %Y, %H:%M") %>
+<%= availability.sport.name %>
+<%= link_to 'Play',  new_availability_booking_path(availability) %>
+</p>
 
-<div class="glide">
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-      <li class="glide__slide"></li>
-      <li class="glide__slide"></li>
-      <li class="glide__slide"></li>
-    </ul>
-  </div>
+<% end%>
 
-  <div class="glide__arrows" data-glide-el="controls">
-    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-  </div>
-</div>
+
+
