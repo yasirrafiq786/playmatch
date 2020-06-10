@@ -1,18 +1,9 @@
 <div class="container-fluid py-4">
-
   <div class="sports-card">
     <div class="sports-card-header">
       <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/01/26/22/40/child-613199_960_720.jpg" alt="Card image">
       <h4 class="card-title"><%= sport.name.upcase %></h4>
-        <div class="arrows">
-          <div class="arrow-left">
-            <i class="fas fa-chevron-circle-left"></i>
-          </div>
-          <div class="arrow-right">
-            <i class="fas fa-chevron-circle-right"></i>
-          </div>
-        </div>
-      </div>
+    </div>
     <div class="sports-card-body">
       <div class="body-heading" style="font-weight: bold;">
         <%= link_to 'Browse players', sport_path(sport) %>
@@ -33,5 +24,4 @@
       </div>
     </div>
   </div>
-
 </div>
