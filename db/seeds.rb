@@ -1,18 +1,27 @@
-puts "Starting Seed"
-yasir = User.create!(first_name:"Yasir", email:"yasir@yasir.com", password:"123abc")
-andy = User.create!(first_name:"Andy", email:"andy@andy.com", password:"123abc")
-squash = Sport.create!(name:"Squash")
-badminton = Sport.create!(name:"Badminton")
-football = Sport.create!(name:"Football")
-frisbee = Sport.create!(name:"Frisbee")
-yasir.sports = [squash, frisbee]
-andy.sports = [badminton, football]
-yasir_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: squash, user:yasir)
-andy_availability = Availability.create!(start_time:Date.today, end_time:Date.today+2, sport: badminton, user:andy)
-booking1 = Booking.create!(sport: squash, status: 'pending', date: Date.today)
-booking1.users = [yasir, andy]
-booking2 = Booking.create!(sport: badminton, status: 'pending', date: Date.today+1)
-booking2.users = [andy, yasir]
-review1 = Review.create!(content:"Its awesome", rating:4, reviewer: andy, reviewee: yasir, booking: booking1)
-review2 = Review.create!(content:"Its filth", rating:2, reviewer: yasir, reviewee: andy, booking: booking2)
-puts "Finished Seeding"
+test_user1 = User.create(first_name: "Harry", last_name: "Potter", location: "Hogwarts", email: "wizard@harry.com", password: "magic_hedwig")
+test_user2 = User.create(first_name: "Ron", last_name: "Weasley", location: "The Burrow", email: "wizard@ron.com", password: "magic_pigwidgeon")
+test_sport = Sport.create(name: "Quidditch")
+test_booking1 = Booking.create(sport: test_sport, date_time: DateTime.now, status: "Pending")
+test_booking2 = Booking.create(sport: test_sport, date_time: DateTime.now, status: "Pending")
+test_team = Team.create(name: "Griffindor Quidditch Team", booking: test_booking2)
+test_review = Review.create(content: "Great fun", rating: 5.0, booking: test_booking1, reviewer: test_user1, reviewee: test_user2)
+test_conversation = Conversation.create()
+test_message = Message.create(user: test_user1, conversation: test_conversation)
+test_availability = Availability.create(start_time: DateTime.now, end_time: DateTime.now+10, sport: test_sport, user: test_user1)
+
+test_booking1.users << test_user1
+test_booking1.users << test_user2
+
+test_team.users << test_user1
+test_team.users << test_user2
+
+#########
+test_sport2 = Sport.create(name: "Soccer")
+test_sport3 = Sport.create(name: "Volleyball")
+test_sport4 = Sport.create(name: "Table Tennis")
+
+test_sport.users << test_user1
+test_sport.users << test_user2
+
+test_sport2.users << test_user1
+test_sport3.users << test_user2

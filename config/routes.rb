@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   resources :reviews, only: :index
+  resources :profiles, only: [ :index, :show ]
 
   if Rails.env.development?
     get '/navigation', to: 'pages#navigation'
