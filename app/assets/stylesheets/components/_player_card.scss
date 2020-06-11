@@ -1,0 +1,34 @@
+.profile-container {
+  padding: 2vw;
+  width: 90vw;
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+.left-player-details {
+  font-size: 1rem;
+  text-align: center;
+  margin: 2vw;
+  padding: 1vw;
+}
+
+.player-skill{
+  margin: 2vw;
+}
+.right-player-details {
+  color: $blue;
+  margin: 5vw;
+  padding-left: 5vw;
+}
+
+.button-style{
+    display: flex;
+    width: 50%;
+    padding: .5rem .8rem;
+    color: white;
+    background-color: $blue;
+    border-radius: 30px;
+}
