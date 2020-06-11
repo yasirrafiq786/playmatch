@@ -14,7 +14,13 @@
   <p>Playmatch is the best way to find people to play your favorite sports with.</p>
   <div class="wrap">
      <div class="search">
-        <input type="text" class="searchTerm" placeholder="Find sport">
+       <%= form_tag sports_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control", id: 'search-input', data: {algoliaId: ENV["ALGOLIA_APPLICATION_ID"], algoliaSearchKey: ENV["ALGOLIA_APPLICATION_FRONTEND_API_KEY"] },
+    placeholder: "Find a sport" 
+  %>
+<% end %> 
      </div>
   </div>
 </div>

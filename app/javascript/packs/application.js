@@ -28,6 +28,8 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+import { initAlgoliaSearch } from '../components/init_algolia_search';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 
 
@@ -35,7 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initFlatpickr();
-  
-  
-  
+  initAlgoliaSearch();
 });
