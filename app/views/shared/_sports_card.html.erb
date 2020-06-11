@@ -1,7 +1,7 @@
 <div class="container-fluid py-4">
   <div class="sports-card">
     <div class="sports-card-header">
-      <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/01/26/22/40/child-613199_960_720.jpg" alt="Card image">
+      <%= link_to image_tag("https://cdn.pixabay.com/photo/2015/01/26/22/40/child-613199_960_720.jpg"), sport_path(sport) %>
       <h4 class="card-title"><%= sport.name.upcase %></h4>
     </div>
     <div class="sports-card-body">
