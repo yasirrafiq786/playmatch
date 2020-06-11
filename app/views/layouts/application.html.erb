@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    
+    
   </head>
 
   <body>
@@ -16,6 +18,7 @@
     <%= yield %>
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    
   </body>
 
     <nav>
@@ -24,7 +27,6 @@
         <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-comments"></i>').html_safe %> </li>
         <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-bell"></i>').html_safe %> </li>
         <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-calendar-alt"></i>').html_safe, bookings_path %> </li>
-        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-cog"></i>').html_safe, navigation_path %> </li>
       </ul>
     </nav>
 </html>
