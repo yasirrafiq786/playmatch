@@ -6,8 +6,11 @@
 <%= form_tag sports_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
-    placeholder: "Find a sport"
+    class: "form-control", id: 'search-input', data: {algoliaId: ENV["ALGOLIA_APPLICATION_ID"], algoliaSearchKey: ENV["ALGOLIA_APPLICATION_FRONTEND_API_KEY"] },
+    placeholder: "Find a sport" 
   %>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+
+
+
