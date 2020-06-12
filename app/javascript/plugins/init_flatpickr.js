@@ -1,11 +1,11 @@
 import flatpickr from "flatpickr";
-import "flatpickr/dist/themes/dark.css";
+
 
 const initFlatpickr = () => {
-    $(".flat-pickr").flatpickr({
-        altFormat: "true",
+    flatpickr(".flat-pickr",{
         dateFormat: "Y-m-d",
         defaultDate: "today",
+        disableMobile: true
     });
 }
 
