@@ -31,6 +31,7 @@ import "bootstrap";
 
 import { initAlgoliaSearch } from '../components/init_algolia_search';
 import { initFlatpickr } from '../plugins/init_flatpickr';
+import { initOwlCarousel } from '../plugins/init_owlcarousel';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initFlatpickr();
   initAlgoliaSearch();
+  initOwlCarousel();
 });
