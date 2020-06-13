@@ -1,0 +1,32 @@
+.profile-container {
+  padding: 2vw;
+  width: 375px;
+  height: 121px;
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  font-size: 12px;
+}
+
+.profile-container h6 {
+  font-size: 12px;
+}
+
+.left-player-details {
+  text-align: center;
+}
+
+.right-player-details {
+  color: $blue;
+}
+
+.button-style{
+    display: flex;
+    width: 50%;
+    padding: .5rem .8rem;
+    color: white;
+    background-color: $blue;
+    border-radius: 30px;
+}
