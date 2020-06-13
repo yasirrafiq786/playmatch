@@ -1,0 +1,65 @@
+.profile-container {
+  padding: 2vw;
+  width: 370px;
+  height: 90px;
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  margin: auto;
+  margin-bottom: 2vw;
+  font-size: 8px;
+  position: relative;
+}
+
+.profile-container h6 {
+  font-size: 8px;
+}
+
+.left-player-details {
+  text-align: center;
+  padding: 1vw;
+}
+
+.middle-player-details {
+  color: $blue;
+  margin-left: 10vw;
+  padding: 2vw;
+  line-height: 15pt;
+}
+
+.right-player-details {
+  color: $blue;
+  margin-left: 5vw;
+  padding: 2vw;
+  line-height: 15pt;
+}
+
+.button-style{
+    padding: .3rem 2rem;
+    color: white;
+    background-color: $blue;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
+    font-size: 10px;
+}
+
+.message-icon{
+  font-size: 22px;
+  position: absolute;
+  bottom: 5px;
+  right: 90px;
+}
+
+.view-profile-icon {
+  font-size: 25px;
+  position: absolute;
+  bottom: 5px;
+  left: 210px;
+
+}
+
+
+
