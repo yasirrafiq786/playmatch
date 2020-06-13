@@ -1,9 +1,9 @@
 <h1>Bookings Detail</h1>
 <% @bookings.each do |booking|%>
-  <%= link_to 'Leave a Review', new_booking_review_path(booking) %> <br>
+   <br>
   <br>
 <% end%>
-<%= month_calendar events: @bookings do |date, bookings| %>
+<%= week_calendar events: @bookings do |date, bookings| %>
   <%= date.day %>
   <% bookings.each do |booking| %>
     <div class= "cal-booking-detail">
@@ -18,6 +18,8 @@
       <div class="cal-booking-status">
         Status: <%= booking.status %> - <%= link_to '<i class="fas fa-check"></i>'.html_safe, booking_path(booking, booking: { status: "confirm"}), method: "patch" %> | <%= link_to '<i class="fas fa-times"></i>'.html_safe, booking_path(booking, booking: { status: "reject"}), method: 'patch' %>
       </div>
+        <%= link_to 'Leave a Review', new_booking_review_path(booking) %>
     </div>
+
   <% end%>
 <% end%>
