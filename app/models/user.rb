@@ -13,5 +13,7 @@ class User < ApplicationRecord
   has_many :conversations, :through => :messages
   has_many :bookings, :through => :user_bookings
   has_many :teams, :through => :user_teams
+  has_many :reviewees, class_name: "Review", foreign_key: "reviewee_id"
+  has_many :reviewers, class_name: "Review", foreign_key: "reviewer_id"
 
 end
