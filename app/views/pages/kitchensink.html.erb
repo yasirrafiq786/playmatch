@@ -1,23 +1,19 @@
 <h1>Kitchen sink</h1>
 
 #Profile Card (ShowPage)
-
 <div class = "profile-container">
   <div class = "left-player-details">
     <h6> Player Name </h6>
-    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="80px">
+    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="45px">
     <div class = "player-skill">
       <h6> Player Skill: </h6>
       <p> Intermediate </p>
     </div>
   </div>
-
-
   <div class = "right-player-details">
-
     <p> <i class="fas fa-star"></i> 3.5 (5 reviews) </p>
     <p> <i class="fas fa-map-marker-alt"></i> 4.3 km </p>
-    <h6 clas><%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path %></h6>
+    <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path %></h6>
     <h6> <%= link_to 'Book', bookings_path, class: "button-style" %> </h6>
   </div>
 </div>

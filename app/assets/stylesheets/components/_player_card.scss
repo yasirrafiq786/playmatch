@@ -1,27 +1,25 @@
 .profile-container {
   padding: 2vw;
-  width: 90vw;
+  width: 375px;
+  height: 121px;
   display: flex;
   background: white;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   margin: auto;
+  font-size: 12px;
+}
+
+.profile-container h6 {
+  font-size: 12px;
 }
 
 .left-player-details {
-  font-size: 1rem;
   text-align: center;
-  margin: 2vw;
-  padding: 1vw;
 }
 
-.player-skill{
-  margin: 2vw;
-}
 .right-player-details {
   color: $blue;
-  margin: 5vw;
-  padding-left: 5vw;
 }
 
 .button-style{
