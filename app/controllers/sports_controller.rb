@@ -8,7 +8,6 @@ class SportsController < ApplicationController
 end
 
   def show
-    # @sports = Sport.where("celebrity_id = ?", params[:id])
     @sport = Sport.find(params[:id])
   end
 end

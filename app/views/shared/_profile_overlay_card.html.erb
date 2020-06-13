@@ -1,0 +1,19 @@
+<div class="profile-overlay-container">
+  <div class="name-box">
+    <h2><%= @profile.first_name %></h2>
+    <%= link_to "#" do %>
+      <i class="fas fa-comments fa-lg"></i>
+    <% end %>
+  </div>
+  <div class="reviews">
+    <h3>Reviews</h3>
+    <% @profile.reviewees.each do |review| %>
+      <%= review.content %>
+      <% count = 0 %>
+      <% while count != review.rating %>
+        <% count += 1 %>
+        <i class="fas fa-star"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
