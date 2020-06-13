@@ -3,14 +3,24 @@
   <div class="banner-heading">
     <h3>Playmatch</h3>
     <div class="sign-in">
-      <h5> <%= link_to "Login", new_user_session_path  %> </h5>
-      <h5> <%= link_to "Registration", new_user_registration_path %> </h5>
+      <% if user_signed_in? %>
+        <h5> <%= link_to "Log out", destroy_user_session_path, method: :delete %> </h5>
+        <% else %>
+        <h5> <%= link_to "Login", new_user_session_path  %> </h5>
+        <h5> <%= link_to "Registration", new_user_registration_path %> </h5>
+        <% end %>
     </div>
   </div>
   <p>Playmatch is the best way to find people to play your favorite sports with.</p>
   <div class="wrap">
      <div class="search">
-        <input type="text" class="searchTerm" placeholder="Find sport">
+       <%= form_tag sports_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control", id: 'search-input', data: {algoliaId: ENV["ALGOLIA_APPLICATION_ID"], algoliaSearchKey: ENV["ALGOLIA_APPLICATION_FRONTEND_API_KEY"] },
+    placeholder: "Find a sport" 
+  %>
+<% end %> 
      </div>
   </div>
 </div>

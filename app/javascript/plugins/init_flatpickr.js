@@ -1,10 +1,11 @@
 import flatpickr from "flatpickr";
 
+
 const initFlatpickr = () => {
-    $(".flat-pickr").flatpickr({
-        altFormat: "true",
+    flatpickr(".flat-pickr",{
         dateFormat: "Y-m-d",
         defaultDate: "today",
+        disableMobile: true
     });
 }
 
