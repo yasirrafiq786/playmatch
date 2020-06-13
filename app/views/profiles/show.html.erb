@@ -1,18 +1,2 @@
 
-<%= @profile.first_name %>
-
-<%= link_to "#" do %>
-  <i class="fas fa-comments"></i>
-<% end %>
-
-<h3>Reviews</h3>
-<% @profile.reviewees.each do |review| %>
-  <%= review.content %>
-  <% count = 0 %>
-  <% while count != review.rating %>
-    <% count += 1 %>
-    <i class="fas fa-star"></i>
-  <% end %>
-
-  <%= review.content %>
-<% end %>
+<%= render 'shared/profile_overlay_card' %>
