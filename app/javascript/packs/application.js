@@ -31,15 +31,12 @@ import "bootstrap";
 
 import { initAlgoliaSearch } from '../components/init_algolia_search';
 import { initFlatpickr } from '../plugins/init_flatpickr';
-import { initOwlCarousel } from '../plugins/init_owlcarousel';
-
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initFlatpickr();
-  initOwlCarousel();
   initAlgoliaSearch();
   
 
