@@ -11,6 +11,7 @@
     "flatpickr": "^4.6.3",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
+    "swiper": "^5.4.3",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
