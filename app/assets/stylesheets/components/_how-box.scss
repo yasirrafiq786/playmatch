@@ -1,3 +1,10 @@
+.how-box-container{
+  border-bottom: white 1px solid;
+  background: rgb(192,191,218);
+  background: linear-gradient(0deg, rgba(192,191,218,1) 0%, rgba(255,255,255,1) 81%, rgba(0,232,255,1) 100%);
+}
+
+
 .how-box{
   box-sizing: border-box;
   font-size: 1rem;
@@ -5,6 +12,7 @@
   width: 100vw;
   display: flex;
   align-items: center;
+  
 }
 
 .how-box-heading {

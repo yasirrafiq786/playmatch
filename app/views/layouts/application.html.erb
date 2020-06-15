@@ -14,19 +14,13 @@
   </head>
 
   <body>
+    <%= render 'shared/headerbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-
+    <%= render 'shared/footerbar' %>
   </body>
 
-    <nav>
-      <ul class = "nav-display">
-        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-home"></i>').html_safe, root_path %> </li>
-        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-comments"></i>').html_safe %> </li>
-        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-bell"></i>').html_safe %> </li>
-        <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-calendar-alt"></i>').html_safe, bookings_path %> </li>
-      </ul>
-    </nav>
+    
 </html>

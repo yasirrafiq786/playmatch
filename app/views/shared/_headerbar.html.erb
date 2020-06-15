@@ -1,0 +1,23 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "https://images.vexels.com/media/users/3/189951/isolated/preview/736bd87e5c757548bf762dfb4fe74369-tennis-racket-and-balls-by-vexels.png" %>
+    <% end %>
+    <h5 class="heading-navbar">PLAYMATCH</h5>
+
+  
+      <% if user_signed_in? %>
+        
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        
+      <% else %>
+        <div class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </div>
+      <% end %>
+   
+</div>
