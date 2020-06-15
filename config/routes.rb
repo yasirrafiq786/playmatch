@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   resources :reviews, only: :index
   resources :profiles, only: [ :index, :show ]
 
+  resources :chatrooms, only: [:create, :show] do
+    resources :messages, only: :create
+  end
+
   if Rails.env.development?
     get '/navigation', to: 'pages#navigation'
     get '/kitchensink', to: 'pages#kitchensink'
