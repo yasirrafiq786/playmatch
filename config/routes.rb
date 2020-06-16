@@ -10,9 +10,13 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [ :index, :show, :update ] do
     resources :reviews, only: [:new, :create]
+    resources :messages, only: [:create, :index]
   end
+  # resources :messages, only: :index
   resources :reviews, only: :index
   resources :profiles, only: [ :index, :show ]
+
+  
 
   if Rails.env.development?
     get '/navigation', to: 'pages#navigation'
