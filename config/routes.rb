@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [ :index, :show, :update ] do
     resources :reviews, only: [:new, :create]
-    resources :messages, only: [:create, :index]
+    resources :messages, only: [:create]
   end
+  resources :messages, only: :index
   resources :reviews, only: :index
   resources :profiles, only: [ :index, :show ]
 
