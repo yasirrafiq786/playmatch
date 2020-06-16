@@ -32,6 +32,7 @@ import "bootstrap";
 import { initAlgoliaSearch } from '../components/init_algolia_search';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initSwiper } from '../plugins/init_swiper';
+import { initConversationCable } from '../channels/conversation-channel';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initAlgoliaSearch();
   initSwiper();
+  initConversationCable();
   
 
 });
