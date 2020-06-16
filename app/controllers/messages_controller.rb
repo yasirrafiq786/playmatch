@@ -15,8 +15,8 @@ class MessagesController < ApplicationController
         @message.user = current_user
         if @message.save
             ConversationChannel.broadcast_to(
-                @conversation,
-                render_to_string( partial: 'message', locals: {message: @message})
+                @booking,
+                render_to_string( partial: 'messages/message', locals: {message: @message})
             )
             redirect_to booking_messages_path(@booking, anchor: "message-#{@message.id}")
         else

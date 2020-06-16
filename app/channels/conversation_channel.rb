@@ -1,6 +1,6 @@
 class ConversationChannel < ApplicationCable::Channel
   def subscribed
-    conversation = Conversation.find(params[:id])
+    conversation = Booking.find(params[:id])
     stream_for conversation
   end
 
