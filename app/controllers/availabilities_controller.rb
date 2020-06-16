@@ -1,6 +1,10 @@
 class AvailabilitiesController < ApplicationController
   def index
+    # if params search availability == 0
+    #   @availabilities
+
     @availabilities = Availability.all
+    @sport = Sport.find(params[:sport_id])
     @bookings = Booking.all
   end
 

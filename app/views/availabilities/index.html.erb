@@ -1,39 +1,87 @@
-<h1>Players</h1>
 <% @availabilities.each do |availability|%>
-
-<div class = "profile-container">
-  <div class = "left-player-details">
-    <h6> <%= availability.user.first_name %> </h6>
-    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="45px">
-    <div class = "player-skill">
-        <p> Intermediate </p>
+  <div class="modal fade" id='modal<%= availability.id %>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="profile-overlay-container">
+            <div class="name-box">
+              <h2><%= availability.user.first_name %></h2>
+              <%= link_to "#" do %>
+                <i class="fas fa-comments fa-lg"></i>
+              <% end %>
+            </div>
+            <div class="reviews">
+              <h3>Reviews</h3>
+              <% availability.user.reviewees.each do |review| %>
+                <%= review.content %>
+                <% count = 0 %>
+                <% while count != review.rating %>
+                  <% count += 1 %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class = "middle-player-details">
-    <i class="fas fa-star"></i> 3.5 (5 reviews)
+<% end %>
+
+<h1>Players</h1>
+  <%= simple_form_for( :search, url: sport_availabilities_path(@sport), method: :get, remote: true) do |f| %>
+    <!-- <div class="custom-control custom-switch">
+      <input type="checkbox" class="custom-control-input" id="customSwitches">
+      <label class="custom-control-label" for="customSwitches">All players</label>
+    </div> -->
+    <%= f.input :availability, as: :boolean, label_html: {class: "custom-control-label"}, input_html: {class: "custom-control-input"}, wrapper_html: {class: "custom-control custom-switch"} %>
+    <%= f.input :skill, as: :radio_buttons, collection: 1..5 %>
     <br>
-    <i class="fas fa-map-marker-alt"></i> 4.3 km
-  </div>
-    <div class = "right-player-details">
-      <i class="fas fa-clock"></i>
-      <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
-      <br>
-      <i class="fas fa-heart"></i>
-      <%= availability.sport.name %>
+    <%= f.button :button, "apply filters", class: "form-control btn-primary btn btn-block" %>
+  <% end %>
+
+<% @availabilities.each do |availability|%>
+  <span type="button" data-toggle="modal" data-target='#modal<%= availability.id %>'>
+    <div class = "profile-container">
+      <div class = "left-player-details">
+        <h6> <%= availability.user.first_name %> </h6>
+        <img src= <%= asset_path "logo.png" %> alt="placeholder" height="45px">
+        <div class = "player-skill">
+            <p> Intermediate </p>
+        </div>
+      </div>
+      <div class = "middle-player-details">
+        <i class="fas fa-star"></i> 3.5 (5 reviews)
+        <br>
+        <i class="fas fa-map-marker-alt"></i> 4.3 km
+      </div>
+        <div class = "right-player-details">
+          <i class="fas fa-clock"></i>
+          <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
+          <br>
+          <i class="fas fa-heart"></i>
+          <%= availability.sport.name %>
+        </div>
+
+        <div class = "message-icon">
+          <%= link_to ('<i class="fas fa-comments"></i>').html_safe %>
+        </div>
+
+        <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path,
+              class: "view-profile-icon" %></h6>
+        <h6> <%= link_to 'Book',  new_availability_booking_path(availability),
+             class: "button-style" %> </h6>
+      </div>
     </div>
-
-    <div class = "message-icon">
-      <%= link_to ('<i class="fas fa-comments"></i>').html_safe %>
-    </div>
-
-    <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path,
-          class: "view-profile-icon" %></h6>
-    <h6> <%= link_to 'Book',  new_availability_booking_path(availability),
-         class: "button-style" %> </h6>
-  </div>
-</div>
-
+  </span>
 <% end%>
-
-
-
