@@ -1,9 +1,16 @@
 class MessagesController < ApplicationController
 
+    def index
+        @booking = Booking.find(params[:booking_id])
+        @messages = Message.where(booking: @booking)
+        @message = Message.new
+    end
+
     def create
-     
-        @conversation = Conversation.find(params[:conversation_id])
+        @booking = Booking.find(params[:booking_id])
+        @conversation = Conversation.first
         @message = Message.new(message_params)
+        @message.booking = @booking
         @message.conversation = @conversation
         @message.user = current_user
         if @message.save
@@ -11,9 +18,9 @@ class MessagesController < ApplicationController
                 @conversation,
                 render_to_string( partial: 'message', locals: {message: @message})
             )
-            redirect_to conversation_path(@conversation, anchor: "message-#{@message.id}")
+            redirect_to booking_messages_path(@booking, anchor: "message-#{@message.id}")
         else
-            render "conversations/show"
+            render "index"
         end
           
     end
