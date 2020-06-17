@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  mount ActionCable.server => '/cable'
+  
 
   resources :sports, only: [:index, :show] do
     resources :availabilities, only: :index
