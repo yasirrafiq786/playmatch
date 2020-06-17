@@ -1,5 +1,6 @@
 .messages-container {
     padding: 4px;
+    margin-bottom: 50px;
 }
 
 .message-container {
@@ -25,4 +26,25 @@
 
 .img-message {
     margin: auto 0;
+}
+
+.btn-msg {
+    height: 38px;
+    
+    
+    
+    
+}
+
+#new_message {
+    display: flex;
+    // justify-content: left;
+    margin-left: 42px;
+    margin-top: 8px;
+
+    
+}
+
+#message_content {
+    width: 284px;
 }
