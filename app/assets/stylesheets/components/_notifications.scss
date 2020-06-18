@@ -1,0 +1,53 @@
+.notifications-container {
+  padding: 2vw;
+  width: 340px;
+  height: 650px;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  margin: auto;
+  margin-bottom: 2vw;
+  font-size: 8px;
+  position: relative;
+}
+
+.close-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 40px;
+  margin-right: 5vw;
+}
+
+.btn-placement{
+ position: absolute;
+ bottom: 5px;
+ right: 0;
+ border-radius: 30px;
+ padding: .1rem .8rem;
+}
+
+.notifications-heading {
+  color: $blue;
+  border-bottom: 2px solid $blue;
+}
+
+.notifications-message-box {
+  width: 320px;
+  height: 25vw;
+  padding: 2vw;
+  border-bottom: 2px solid $blue;
+  position: relative;
+}
+
+.message-subject {
+  font-size: 14px;
+  margin-top: 1vw;
+}
+
+.message-content {
+  font-size: 12px;
+  width: 50vw;
+}
+
