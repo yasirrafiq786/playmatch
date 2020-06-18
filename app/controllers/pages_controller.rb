@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def navigation
-
+    
   end
 
   def kitchensink
