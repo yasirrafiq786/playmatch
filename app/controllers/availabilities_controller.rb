@@ -1,11 +1,13 @@
 class AvailabilitiesController < ApplicationController
   def index
-    # if params search availability == 0
-    #   @availabilities
-
-    @availabilities = Availability.all
     @sport = Sport.find(params[:sport_id])
-    @bookings = Booking.all
+    @availabilities = Availability.where(sport: @sport)
+    if params[:search].present?
+      flash[:notice] = "AJAX is working"
+      @availabilities = @availabilities.select do |availability|
+        availability.user.user_sports.find_by(sport: @sport).sport_level <= params[:search][:skill].to_i
+      end
+    end
   end
 
   def new

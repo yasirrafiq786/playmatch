@@ -39,12 +39,11 @@
 <% end %>
 
 <h1>Players</h1>
-  <%= simple_form_for( :search, url: sport_availabilities_path(@sport), method: :get, remote: true) do |f| %>
+  <%= simple_form_for( :search, url: sport_availabilities_path(@sport), method: :get) do |f| %>
     <!-- <div class="custom-control custom-switch">
       <input type="checkbox" class="custom-control-input" id="customSwitches">
       <label class="custom-control-label" for="customSwitches">All players</label>
     </div> -->
-    <%= f.input :availability, as: :boolean, label_html: {class: "custom-control-label"}, input_html: {class: "custom-control-input"}, wrapper_html: {class: "custom-control custom-switch"} %>
     <%= f.input :skill, as: :radio_buttons, collection: 1..5 %>
     <br>
     <%= f.button :button, "apply filters", class: "form-control btn-primary btn btn-block" %>
@@ -57,7 +56,7 @@
         <h6> <%= availability.user.first_name %> </h6>
         <img src= <%= asset_path "logo.png" %> alt="placeholder" height="45px">
         <div class = "player-skill">
-            <p> Intermediate </p>
+            <p> Skill: <%= availability.user.user_sports.find_by(sport: @sport).sport_level %> </p>
         </div>
       </div>
       <div class = "middle-player-details">
