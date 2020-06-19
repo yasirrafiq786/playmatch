@@ -1,4 +1,4 @@
-<h1>Bookings Detail</h1>
+<p id="booking-heading">Upcoming Bookings<p>
 
 <% @bookings.each do |booking| %>
 <div class = "booking-container">
@@ -8,7 +8,7 @@
   </div>
 
   <div class = "middle-booking-details">
-    <p> Player Name </p>
+    <p> <%= booking.users.last.first_name %> </p>
     <p> <%= booking.date.strftime("%d %b") %> </p>
     <p> <%= booking.sport.name %>  </p>
   </div>
@@ -18,6 +18,9 @@
   </div>
   <div class = "booking-status">
    <%= booking.status %>
+   <% if booking.users.last == current_user %>
+   <%= link_to '<i class="fas fa-check"></i>'.html_safe, booking_path(booking, booking: { status: "confirm"}), method: "patch", remote: true %> | <%= link_to '<i class="fas fa-times"></i>'.html_safe, booking_path(booking, booking: { status: "reject"}), method: 'patch', remote: true %>
+   <% end%>
   </div>
 
 </div>
