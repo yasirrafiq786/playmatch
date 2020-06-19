@@ -1,20 +1,25 @@
 .booking-container {
   padding: 2vw;
-  width: 370px;
+  width: 90vw;
   height: 90px;
   display: flex;
-  background: white;
+  background: whitesmoke;
   border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   margin: auto;
   margin-bottom: 2vw;
   position: relative;
+  
 }
 
 .left-booking-details {
   text-align: center;
   padding: 1vw;
   margin-left: 5vw;
+  
+  
+  
+  
 }
 
 .middle-booking-details {
@@ -41,4 +46,10 @@
   right: 0;
   margin: 2vw;
   padding-right: 5vw;
+}
+
+#booking-heading {
+  font-size: large;
+  font-weight: bolder;
+  text-align: center;
 }
