@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("components/init_address_finder").start()
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -33,6 +34,7 @@ import { initAlgoliaSearch } from '../components/init_algolia_search';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initSwiper } from '../plugins/init_swiper';
 import { initConversationCable } from '../channels/conversation_channel';
+// import { initAddressFinder } from '../components/init_address_finder';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -42,6 +44,6 @@ document.addEventListener('turbolinks:load', () => {
   initAlgoliaSearch();
   initSwiper();
   initConversationCable();
-  
+  // initAddressFinder();
 
 });
