@@ -7,7 +7,7 @@ const initFlatpickr = () => {
     flatpickr(".flat-pickr",{
         dateFormat: "Y-m-d",
         defaultDate: "today",
-        disableMobile: true
+        disableMobile: false
     });
 }
 
