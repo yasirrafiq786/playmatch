@@ -5,7 +5,7 @@ class AvailabilitiesController < ApplicationController
     if params[:search].present?
       # flash[:notice] = "AJAX is working"
       @availabilities = @availabilities.select do |availability|
-        availability.user.user_sports.find_by(sport: @sport).sport_level <= params[:search][:skill].to_i
+        availability.user.user_sports.find_by(sport: @sport).sport_level == params[:search][:skill].to_i
       end
     end
   end

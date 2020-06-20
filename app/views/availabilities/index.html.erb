@@ -35,9 +35,14 @@
 
 <h1><%= @sport.name %> players</h1>
   <%= simple_form_for( :search, url: sport_availabilities_path(@sport), method: :get) do |f| %>
-    <%= f.input :skill, as: :radio_buttons, collection: 1..5 %>
-    <br>
-    <%= f.button :button, "apply filters", class: "form-control btn-primary btn btn-block" %>
+    <div>
+      <div>
+      <%= f.input :skill, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline %>
+      </div>
+      <div>
+      <%= f.button :button, "Filter by skill level", class: "form-control btn-primary btn btn-block" %>
+      </div>
+    </div>
   <% end %>
 
 <% @availabilities.each do |availability|%>
