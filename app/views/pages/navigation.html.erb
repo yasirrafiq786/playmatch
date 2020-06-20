@@ -3,7 +3,6 @@
 <p><%= link_to 'Booking', bookings_path %></p>
 <p><%= link_to 'Review', reviews_path %></p>
 <p><%= link_to 'List of Players (per sport)', sports_path %></p>
-<!--<p><%= link_to 'Start Conversation', new_conversation_messages_path(@conversation), method: 'post' %></p>-->
 
 <%= form_tag sports_path, method: :get do %>
   <%= text_field_tag :query,
