@@ -1,28 +1,102 @@
-puts "Starting Seed"
-yasir = User.create!(first_name:"Yasir", email:"yasir@yasir.com", password:"123abc")
-andy = User.create!(first_name:"Andy", email:"andy@andy.com", password:"123abc")
-julia = User.create!(first_name:"Julia", email:"julia@julia.com", password:"123abc")
-sophie = User.create!(first_name:"Sophie", email:"sophie@sophie.com", password:"123abc")
-squash = Sport.create!(name:"Squash")
+require "open-uri"
+
+puts "Starting seed"
+puts "Cleaning database"
+
+Booking.destroy_all
+Review.destroy_all
+Availability.destroy_all
+UserSport.destroy_all
+User.destroy_all
+Sport.destroy_all
+
+#Sports
+puts "Creating sports"
+sports_array = []
+
 badminton = Sport.create!(name:"Badminton")
-football = Sport.create!(name:"Football")
+file = URI.open('https://images.unsplash.com/photo-1572987590154-de340a13acfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+badminton.photo.attach(io: file, filename: 'sport.jpg', content_type: 'image/jpeg')
+sports_array << badminton
+
+soccer = Sport.create!(name:"Soccer")
+file = URI.open('https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+soccer.photo.attach(io: file, filename: 'sport.jpg', content_type: 'image/jpeg')
+sports_array << soccer
+
+hockey = Sport.create!(name:"Hockey")
+file = URI.open('https://images.unsplash.com/photo-1550713157-c27a66e5eb66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+hockey.photo.attach(io: file, filename: 'sport.jpg', content_type: 'image/jpeg')
+sports_array << hockey
+
+golf = Sport.create!(name:"Golf")
+file = URI.open('https://images.unsplash.com/photo-1584837140804-599306fb37f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+golf.photo.attach(io: file, filename: 'sport.jpg', content_type: 'image/jpeg')
+sports_array << golf
+
+tennis = Sport.create!(name:"Tennis")
+file = URI.open('https://images.unsplash.com/photo-1587683437362-da7775ffc532?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80')
+tennis.photo.attach(io: file, filename: 'sport.jpg', content_type: 'image/jpeg')
+sports_array << tennis
+
 frisbee = Sport.create!(name:"Frisbee")
-yasir.sports = [squash, frisbee]
-andy.sports = [badminton, football]
-julia.sports = [frisbee]
-sophie.sports = [squash, frisbee, badminton, football]
-yasir_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: squash, user:yasir)
-andy_availability = Availability.create!(start_time:Date.today, end_time:Date.today+2, sport: badminton, user:andy)
-julia_availability = Availability.create!(start_time:Date.today, end_time:Date.today+2, sport: frisbee, user:julia)
-sophie_availability = Availability.create!(start_time:Date.today, end_time:Date.today+2, sport: frisbee, user:sophie)
-booking1 = Booking.create!(sport: squash, status: 'pending', date: Date.today)
+file = URI.open('https://images.unsplash.com/photo-1591337819702-5c21810edd47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+frisbee.photo.attach(io: file, filename: 'sport.jpg', content_type: 'image/jpeg')
+sports_array << frisbee
+
+cricket = Sport.create!(name:"Cricket")
+file = URI.open('https://images.unsplash.com/flagged/photo-1567943337281-b2ed311deb5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')
+cricket.photo.attach(io: file, filename: 'sport.jpg', content_type: 'image/jpeg')
+sports_array << cricket
+
+basketball = Sport.create!(name:"Basketball")
+file = URI.open('https://images.unsplash.com/photo-1505666287802-931dc83948e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80')
+basketball.photo.attach(io: file, filename: 'sport.jpg', content_type: 'image/jpeg')
+sports_array << basketball
+
+#Permanent database users
+puts "Creating permanent users"
+yasir = User.create!(first_name:"Yasir", email:"yasir@yasir.com", password:"123abc")
+yasir.user_sports << UserSport.new(sport: sports_array.first, sport_level: rand(1..5))
+yasir_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: sports_array.first, user: yasir)
+file = URI.open('https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+# file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
+yasir.avatar.attach(io: file, filename: 'avatar.jpeg', content_type: 'image/jpeg')
+
+sleep(2)
+
+andy = User.create!(first_name:"Andy", email:"andy@andy.com", password:"123abc")
+andy.user_sports << UserSport.new(sport: sports_array.first, sport_level: rand(1..5))
+andy_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: sports_array.first, user: yasir)
+file = URI.open('https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+# file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
+andy.avatar.attach(io: file, filename: 'avatar.jpeg', content_type: 'image/jpeg')
+
+sleep(2)
+
+#Temporary database users
+puts "Creating temporary users"
+20.times do
+  name = Faker::Name.first_name
+  sport = sports_array.sample
+  user = User.create!(first_name: name, email: Faker::Internet.email, password: "123abc")
+  user.user_sports << UserSport.new(sport: sport, sport_level: rand(1..5))
+  user_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: sport, user: user)
+  # file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
+  # user.avatar.attach(io: file, filename: 'avatar.jpeg', content_type: 'image/jpeg')
+  # sleep(2)
+end
+
+#Match bookings
+puts "Creating matches"
+booking1 = Booking.create!(sport: sports_array.first, status: 'pending', date: Date.today)
 booking1.users = [yasir, andy]
-booking2 = Booking.create!(sport: badminton, status: 'pending', date: Date.today+1)
+booking2 = Booking.create!(sport: sports_array.first, status: 'pending', date: Date.today+1)
 booking2.users = [andy, yasir]
-booking3 = Booking.create!(sport: frisbee, status: 'pending', date: Date.today+1)
-booking3.users = [julia, sophie]
+
+#Post-match reviews of other users
+puts "Creating reviews"
 review1 = Review.create!(content:"Awesome game, punctual", rating:4, reviewer: andy, reviewee: yasir, booking: booking1)
 review2 = Review.create!(content:"Great fun, quick to reply", rating:5, reviewer: yasir, reviewee: andy, booking: booking2)
-review3 = Review.create!(content:"Talented player", rating:4, reviewer: julia, reviewee: sophie, booking: booking3)
-review4 = Review.create!(content:"Would play again anytime!", rating:5, reviewer:sophie, reviewee: julia, booking: booking3)
-puts "Finished Seeding"
+
+puts "Finished seeding"

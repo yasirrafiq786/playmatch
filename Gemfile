@@ -66,3 +66,5 @@ gem 'cloudinary'
 gem 'addressfinder', '~> 1.7'
 
 
+#Faker for seed file
+gem "faker"

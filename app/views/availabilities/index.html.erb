@@ -1,10 +1,54 @@
+
+<% @availabilities.each do |availability|%>
+  <div class="modal fade" id='modal<%= availability.id %>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="name-box">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h2><%= availability.user.first_name %></h2>
+              <%= link_to "#" do %>
+                <i class="fas fa-comments fa-lg"></i>
+              <% end %>
+            </div>
+            <div class="reviews">
+              <h3>Reviews</h3>
+              <% if availability.user.reviewees.length > 0 %>
+                <% availability.user.reviewees.each do |review| %>
+                  <%= review.content %>
+                  <% count = 0 %>
+                  <% while count != review.rating %>
+                    <% count += 1 %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <p>No reviews yet.</p>
+              <% end %>
+            </div>
+        </div>
+        <h1><%= @sport.name %> players</h1>
+  <%= simple_form_for( :search, url: sport_availabilities_path(@sport), method: :get) do |f| %>
+    <div>
+      <div>
+      <%= f.input :skill, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline %>
+      </div>
+      <div>
+      <%= f.button :button, "Filter by player's skill", class: "form-control btn-primary btn btn-block" %>
+      </div>
+    </div>
+  <% end %>
+=======
 <h6 class="avail-heading">Pick Your Competition</h6>
 <% @availabilities.each do |availability|%>
+         <span type="button" data-toggle="modal" data-target='#modal<%= availability.id %>'>
   <div class = "profile-container">
     <div class = "left-player-details">
       <div class = "player-skill">
         <h6 id='player-name'> <%= availability.user.first_name %> </h6>
-        <p><span></i></span> I'm Intermediate </p>
+        <p><span></i></span>Skill: <%= availability.user.user_sports.find_by(sport: @sport).sport_level %></p>
       <div class = "middle-player-details">
         <i class="fas fa-star"></i>   5 reviews
       </div>
@@ -18,13 +62,17 @@
     </div>
     <img src= <%= asset_path "logo.png" %> class='card-avatar'>
   </div>
+       
+
   <div class="bottom-details">
-    <h6> <%= link_to "CHALLENGE <i class='fa fa-arrow-right'></i>".html_safe,  new_availability_booking_path(availability),
-         class: "button-style" %> </h6>
+    <h6> <%= link_to 'Book',  new_availability_booking_path(availability),
+             class: "button-style" %> </h6>
     <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path,
-          class: "view-profile-icon" %></h6>
+              class: "view-profile-icon" %></h6>
     
   </div>
 </div>
 </div>
-<% end%>
+ </span>
+ <% end %>
+
