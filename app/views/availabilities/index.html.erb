@@ -1,3 +1,4 @@
+
 <% @availabilities.each do |availability|%>
   <div class="modal fade" id='modal<%= availability.id %>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -28,12 +29,7 @@
               <% end %>
             </div>
         </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-<h1><%= @sport.name %> players</h1>
+        <h1><%= @sport.name %> players</h1>
   <%= simple_form_for( :search, url: sport_availabilities_path(@sport), method: :get) do |f| %>
     <div>
       <div>
@@ -44,39 +40,39 @@
       </div>
     </div>
   <% end %>
-
+=======
+<h6 class="avail-heading">Pick Your Competition</h6>
 <% @availabilities.each do |availability|%>
-  <span type="button" data-toggle="modal" data-target='#modal<%= availability.id %>'>
-    <div class = "profile-container">
-      <div class = "left-player-details">
-        <h6> <%= availability.user.first_name %> </h6>
-        <img src= <%= asset_path "logo.png" %> alt="placeholder" height="45px">
-        <div class = "player-skill">
-            <p> Skill: <%= availability.user.user_sports.find_by(sport: @sport).sport_level %> </p>
-        </div>
-      </div>
+         <span type="button" data-toggle="modal" data-target='#modal<%= availability.id %>'>
+  <div class = "profile-container">
+    <div class = "left-player-details">
+      <div class = "player-skill">
+        <h6 id='player-name'> <%= availability.user.first_name %> </h6>
+        <p><span></i></span>Skill: <%= availability.user.user_sports.find_by(sport: @sport).sport_level %></p>
       <div class = "middle-player-details">
-        <i class="fas fa-star"></i> 3.5 (5 reviews)
-        <br>
-        <i class="fas fa-map-marker-alt"></i> 4.3 km
+        <i class="fas fa-star"></i>   5 reviews
       </div>
-        <div class = "right-player-details">
-          <i class="fas fa-clock"></i>
-          <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
-          <br>
-          <i class="fas fa-heart"></i>
-          <%= availability.sport.name %>
-        </div>
-
-        <div class = "message-icon">
-          <%= link_to ('<i class="fas fa-comments"></i>').html_safe %>
-        </div>
-
-        <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path,
-              class: "view-profile-icon" %></h6>
-        <h6> <%= link_to 'Book',  new_availability_booking_path(availability),
-             class: "button-style" %> </h6>
+      <div>
+        <i class="fas fa-map-marker-alt"></i> 4.3 km  <i class="fas fa-heart"></i><%= availability.sport.name %>
+      </div>
+      <div class = "right-player-details">
+        <i class="fas fa-clock"></i>
+        <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
       </div>
     </div>
-  </span>
-<% end%>
+    <img src= <%= asset_path "logo.png" %> class='card-avatar'>
+  </div>
+       
+
+  <div class="bottom-details">
+    <h6> <%= link_to 'Book',  new_availability_booking_path(availability),
+             class: "button-style" %> </h6>
+    <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path,
+              class: "view-profile-icon" %></h6>
+    
+  </div>
+</div>
+</div>
+ </span>
+ <% end %>
+

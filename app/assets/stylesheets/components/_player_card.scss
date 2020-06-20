@@ -1,62 +1,97 @@
 .profile-container {
   padding: 2vw;
-  width: 370px;
-  height: 90px;
-  display: flex;
+  width: 100vw;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   margin: auto;
   margin-bottom: 2vw;
-  font-size: 8px;
+  font-size: 16px;
   position: relative;
 }
 
 .profile-container h6 {
-  font-size: 8px;
+  font-size: 16px;
+  margin-bottom: 2px;
+  
 }
 
 .left-player-details {
-  text-align: center;
-  padding: 1vw;
+  // text-align: center;
+  
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  p {
+    margin: 0;
+    
+  }
 }
 
 .middle-player-details {
-  color: $blue;
-  margin-left: 10vw;
-  padding: 2vw;
+  color: $black;
+  margin-top: 8px;
+  margin-bottom: 10px;;
   line-height: 15pt;
 }
 
 .right-player-details {
-  color: $blue;
-  margin-left: 5vw;
-  padding: 2vw;
+  color: $black;
+  margin: 10px 0;
+  padding: 0;
   line-height: 15pt;
 }
 
 .button-style{
-    padding: .3rem 2rem;
+    padding: 8px;
     color: white;
-    background-color: $blue;
+    background-color: $black;
     border-radius: 30px;
-    position: absolute;
-    bottom: 10px;
-    left: 100px;
-    font-size: 10px;
+    font-family: $body-font;
+    letter-spacing: 2px;
+    
 }
 
-.message-icon{
-  font-size: 22px;
-  position: absolute;
-  bottom: 5px;
-  right: 90px;
-}
+
 
 .view-profile-icon {
   font-size: 25px;
-  position: absolute;
-  bottom: 5px;
-  left: 210px;
+  color: $black;
+  
+ 
 
+}
+
+.player-skill {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+  
+}
+
+.fa-heart {
+  margin-left: 10px;
+}
+
+.card-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 505;
+  object-fit: cover;
+}
+
+.bottom-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#player-name {
+  font-size: 30px;
+}
+
+.avail-heading {
+  text-align: center;
+  font-size: 24px;
 }
