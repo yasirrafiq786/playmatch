@@ -82,8 +82,8 @@ puts "Creating temporary users"
   user = User.create!(first_name: name, email: Faker::Internet.email, password: "123abc")
   user.user_sports << UserSport.new(sport: sport, sport_level: rand(1..5))
   user_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: sport, user: user)
-  # file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
-  # user.avatar.attach(io: file, filename: 'avatar.jpeg', content_type: 'image/jpeg')
+  file = URI.open('https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+  user.avatar.attach(io: file, filename: 'avatar.jpeg', content_type: 'image/jpeg')
   # sleep(2)
 end
 

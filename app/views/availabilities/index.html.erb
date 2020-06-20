@@ -62,7 +62,7 @@
           <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
         </div>
       </div>
-      <img src= <%= asset_path "logo.png" %> class='card-avatar'>
+      <%= cl_image_tag availability.user.avatar.key, crop: :fill, class: "card-avatar"%>
     </div>
       <div class="bottom-details">
         <h6> <%= link_to 'CHALLENGE',  new_availability_booking_path(availability),
