@@ -1,3 +1,4 @@
+
 (function() {
     var widget, initAddressFinder = function() {
         widget = new AddressFinder.Widget(
@@ -12,7 +13,7 @@
         );
 
         widget.on('address:select', function(fullAddress, metaData) {
-            document.getElementById('user_address').value = metaData.full_address
+            document.getElementById('user_address').value = metaData.full_address;
 
         });
 

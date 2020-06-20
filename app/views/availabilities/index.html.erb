@@ -1,39 +1,30 @@
-<h1>Players</h1>
+<h6 class="avail-heading">Pick Your Competition</h6>
 <% @availabilities.each do |availability|%>
-
-<div class = "profile-container">
-  <div class = "left-player-details">
-    <h6> <%= availability.user.first_name %> </h6>
-    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="65px">
-    <div class = "player-skill">
-        <p> Intermediate </p>
+  <div class = "profile-container">
+    <div class = "left-player-details">
+      <div class = "player-skill">
+        <h6 id='player-name'> <%= availability.user.first_name %> </h6>
+        <p><span></i></span> I'm Intermediate </p>
+      <div class = "middle-player-details">
+        <i class="fas fa-star"></i>   5 reviews
+      </div>
+      <div>
+        <i class="fas fa-map-marker-alt"></i> 4.3 km  <i class="fas fa-heart"></i><%= availability.sport.name %>
+      </div>
+      <div class = "right-player-details">
+        <i class="fas fa-clock"></i>
+        <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
+      </div>
     </div>
+    <img src= <%= asset_path "logo.png" %> class='card-avatar'>
   </div>
-  <div class = "middle-player-details">
-    <i class="fas fa-star"></i> 3.5 (5 reviews)
-    <br>
-    <i class="fas fa-map-marker-alt"></i> 4.3 km
-  </div>
-    <div class = "right-player-details">
-      <i class="fas fa-clock"></i>
-      <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
-      <br>
-      <i class="fas fa-heart"></i>
-      <%= availability.sport.name %>
-    </div>
-
-    <div class = "message-icon">
-      <%= link_to ('<i class="fas fa-comments"></i>').html_safe %>
-    </div>
-
+  <div class="bottom-details">
+    <h6> <%= link_to "CHALLENGE <i class='fa fa-arrow-right'></i>".html_safe,  new_availability_booking_path(availability),
+         class: "button-style" %> </h6>
     <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path,
           class: "view-profile-icon" %></h6>
-    <h6> <%= link_to 'Book',  new_availability_booking_path(availability),
-         class: "button-style" %> </h6>
+    
   </div>
 </div>
-
+</div>
 <% end%>
-
-
-
