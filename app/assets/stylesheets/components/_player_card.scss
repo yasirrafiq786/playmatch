@@ -1,11 +1,11 @@
 .profile-container {
-  padding: 2vw;
+  padding: 8px;
   width: 100vw;
   background: white;
   border-radius: 4px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  margin: auto;
-  margin-bottom: 2vw;
+  margin: 0 auto;
+  margin-bottom: 16px;
   font-size: 16px;
   position: relative;
 }
@@ -43,12 +43,13 @@
 }
 
 .button-style{
-    padding: 8px;
+    padding: 6px 12px;
     color: white;
     background-color: $black;
     border-radius: 30px;
     font-family: $body-font;
     letter-spacing: 2px;
+    
     
 }
 
@@ -94,4 +95,8 @@
 .avail-heading {
   text-align: center;
   font-size: 24px;
+}
+
+.search {
+  width: 80vw;
 }

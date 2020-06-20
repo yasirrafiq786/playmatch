@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
   has_many :user_bookings, dependent: :destroy
   has_many :users, :through => :user_bookings
   has_many :reviews, dependent: :destroy
-  has_many :messages
+  has_many :messages, dependent: :destroy
   belongs_to :sport
 
   validates :status, inclusion: { in: ["pending", "confirm", "reject", "conclude"]}
