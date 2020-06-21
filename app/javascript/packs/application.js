@@ -29,13 +29,15 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
+import { notificationOverlay } from '../components/notifications_overlay';
 import { initAlgoliaSearch } from '../components/init_algolia_search';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initSwiper } from '../plugins/init_swiper';
 import { initConversationCable } from '../channels/conversation_channel';
 // import { initAddressFinder } from '../components/init_address_finder';
 
+
+notificationOverlay();
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -49,3 +51,4 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 require("components/init_address_finder");
+
