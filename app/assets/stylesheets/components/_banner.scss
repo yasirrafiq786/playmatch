@@ -13,9 +13,9 @@
 
 .banner img {
   width: 100%;
-  object-fit: cover;
+  // object-fit: cover;
   height: 354px;
-  opacity: 0.9;
+  
 }
 
 .banner h3 {
@@ -30,14 +30,16 @@
   margin: 0 10px 0 20px;
 }
 
-.banner p {
+#typed {
   position: absolute;
-  color: white;
-  top: 100px;
+  color: black;
+  top: 197px;
   margin-left: 10px;
   margin-right: 120px;
-  font-size: 24px;
-  text-shadow: 2px 2px black;
+  font-size: 28px;
+  letter-spacing: 4px;
+  font-family: $headers-font;
+  // text-shadow: 2px 2px black;
 }
 
 .sign-in {
@@ -49,31 +51,19 @@
   font-size: smaller;
 }
 
-.wrap{
+#signup-btn {
   position: absolute;
-  top: 230px;
-  left: 10px;
+  bottom: 13px;
+  left: 159px;
 }
 
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-  margin: 20px;
-
+.btn-signup {
+  background-color: black;
+  border-radius: 4px;
 }
 
-.searchTerm {
-  border: 1px solid rgb(220, 220, 220);
-  padding: 15px;
-  height: 32px;
-  width: 200px;
-  border-radius: 16px;
-  color: #9DBFAF;
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-.searchTerm:focus{
-  color: black;
+.animate__animated.animate__heartBeat {
+  
+  --animate-duration: 5s;
+  
 }

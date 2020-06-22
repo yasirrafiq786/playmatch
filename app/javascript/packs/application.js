@@ -34,7 +34,8 @@ import { initAlgoliaSearch } from '../components/init_algolia_search';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initSwiper } from '../plugins/init_swiper';
 import { initConversationCable } from '../channels/conversation_channel';
-// import { initAddressFinder } from '../components/init_address_finder';
+import { initTyped } from '../plugins/init_typed';
+import { animateRepeat } from '../plugins/animation_repeat';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -44,7 +45,8 @@ document.addEventListener('turbolinks:load', () => {
   initAlgoliaSearch();
   initSwiper();
   initConversationCable();
-  // initAddressFinder();
+  initTyped();
+  animateRepeat();
 
 });
 
