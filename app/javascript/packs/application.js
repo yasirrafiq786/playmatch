@@ -35,7 +35,7 @@ import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initSwiper } from '../plugins/init_swiper';
 import { initConversationCable } from '../channels/conversation_channel';
 import { initTyped } from '../plugins/init_typed';
-import { animateRepeat } from '../plugins/animation_repeat';
+
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -46,7 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   initSwiper();
   initConversationCable();
   initTyped();
-  animateRepeat();
+  
 
 });
 
