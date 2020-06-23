@@ -94,6 +94,11 @@ booking1.users = [yasir, andy]
 booking2 = Booking.create!(sport: sports_array.first, status: 'pending', date: Date.today+1)
 booking2.users = [andy, yasir]
 
+# 20.times do
+#   booking = Booking.create!(sport: sports_array.first, status: 'pending', date: Date.today)
+#   booking.users = [yasir, andy]
+# end
+
 #Post-match reviews of other users
 puts "Creating reviews"
 review1 = Review.create!(content:"Awesome game, punctual", rating:4, reviewer: andy, reviewee: yasir, booking: booking1)
