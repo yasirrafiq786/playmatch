@@ -36,9 +36,10 @@
   top: 197px;
   margin-left: 10px;
   margin-right: 120px;
-  font-size: 28px;
+  font-size: 24px;
   letter-spacing: 4px;
-  font-family: $headers-font;
+  font-weight: bolder;
+  // font-family: $headers-font;
   // text-shadow: 2px 2px black;
 }
 
@@ -53,8 +54,8 @@
 
 #signup-btn {
   position: absolute;
-  bottom: 13px;
-  left: 159px;
+  bottom: 55px;
+  left: 38px;
 }
 
 .btn-signup {
@@ -64,6 +65,6 @@
 
 .animate__animated.animate__heartBeat {
   
-  --animate-duration: 5s;
+  --animate-duration: 10s;
   
 }
