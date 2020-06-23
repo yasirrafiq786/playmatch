@@ -1,5 +1,6 @@
-
-(function() {
+const init_address_finder = () => {
+  console.log("bye")
+// (function() {
     var widget, initAddressFinder = function() {
         widget = new AddressFinder.Widget(
             document.getElementById('user_address'),
@@ -21,6 +22,8 @@
     };
 
     function downloadAddressFinder() {
+      console.log("hi")
+
         var script = document.createElement('script');
         script.src = 'https://api.addressfinder.io/assets/v3/widget.js';
         script.async = true;
@@ -29,6 +32,6 @@
     };
 
     document.addEventListener('DOMContentLoaded', downloadAddressFinder);
-})();
+};
 
-// export { initAddressFinder };
+export { init_address_finder };
