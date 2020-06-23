@@ -29,25 +29,33 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
+import { notificationOverlay } from '../components/notifications_overlay';
 import { initAlgoliaSearch } from '../components/init_algolia_search';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initSwiper } from '../plugins/init_swiper';
 import { initConversationCable } from '../channels/conversation_channel';
 import { initTyped } from '../plugins/init_typed';
+import { init_address_finder } from '../components/init_address_finder';
+
 
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  notificationOverlay();
   initFlatpickr();
   initAlgoliaSearch();
   initSwiper();
   initConversationCable();
   initTyped();
-  
+
+
 
 });
 
-require("components/init_address_finder");
+// require("components/init_address_finder");
+if (document.getElementById('user_address')) {
+  init_address_finder();
+}
+
