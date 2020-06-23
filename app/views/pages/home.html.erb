@@ -3,13 +3,27 @@
 </div>
 
 <div class="how-box-container">
-  <div class="how-box">
-    <p class = homepage-icons> <i class="fas fa-search"></i> </i> </p>
-    <div class="card-text">
-      <h1 class = "how-box-heading"> SEARCH THE SPORT YOU LOVE </h1>
-      <p class = "how-box-body"> Just tap search, find the sport you love, and see who is available. </p>
+  <div id="how-box-1-container">
+    <div class="how-box-1">
+      <p class = homepage-icons> <i class="fas fa-search"></i> </i> </p>
+      <div class="card-text">
+        <h1 class = "how-box-heading"> SEARCH THE SPORT YOU LOVE </h1>
+        <p class = "how-box-body"> Just tap search, find the sport you love, and see who is available. </p>
+      </div>
     </div>
+      
+        <div class="search">
+          <%= form_tag sports_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control", id: 'search-input', data: {algoliaId: ENV["ALGOLIA_APPLICATION_ID"], algoliaSearchKey: ENV["ALGOLIA_APPLICATION_FRONTEND_API_KEY"] },
+            placeholder: "Find a sport" %>
+          <% end %> 
+        </div>
+      
   </div>
+  
+  
 
   <div class="how-box">
     <div class="card-text">

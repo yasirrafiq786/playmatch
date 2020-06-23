@@ -1,9 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://images.vexels.com/media/users/3/189951/isolated/preview/736bd87e5c757548bf762dfb4fe74369-tennis-racket-and-balls-by-vexels.png" %>
-    <% end %>
-    <h5 class="heading-navbar">PLAYMATCH</h5>
-
+  <%= link_to root_path do %>
+    <h5 class="banner heading-navbar">PLAYMATCH</h5>
+  <% end%>
   
       <% if user_signed_in? %>
         
