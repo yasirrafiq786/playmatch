@@ -1,25 +1,33 @@
-<p id="booking-heading">Upcoming Bookings<p>
+<p id="booking-heading">Upcoming Challenges<p>
 
 <% @bookings.each do |booking| %>
 <div class = "booking-container">
 
   <div class = "left-booking-details">
-    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="65px">
+    <% booking.users.each do |user|%>
+      <% if user != current_user  %>
+        <%= cl_image_tag user.avatar.key, crop: :fit, id: "booking-avatar" %>
+      <% end%>
+    <% end%>
   </div>
 
   <div class = "middle-booking-details">
-    <p> <%= booking.users.last.first_name %> </p>
-    <p> <%= booking.date.strftime("%d %b") %> </p>
-    <p> <%= booking.sport.name %>  </p>
+    <p> <i class="far fa-user fa-booking"></i><%= booking.users.last.first_name %> </p>
+    <p> <i class="far fa-calendar-alt fa-booking"></i><%= booking.date.strftime("%d %b") %> </p>
+    <p> <i class="fas fa-futbol fa-booking"></i><%= booking.sport.name %>  </p>
+    <p> <i class="far fa-question-circle fa-booking"></i><%= booking.status.capitalize%> </p>
   </div>
 
   <div class = "right-booking-details">
-    <%= link_to ('<i class="fas fa-comments"></i>').html_safe, booking_messages_path(booking) %>
+    <%= link_to ('<i class="fas fa-comments fa-booking-message"></i>').html_safe, booking_messages_path(booking) %>
+    
   </div>
   <div class = "booking-status">
-   <%= booking.status %>
+   
+    
    <% if booking.users.last == current_user %>
-   <%= link_to '<i class="fas fa-check"></i>'.html_safe, booking_path(booking, booking: { status: "confirm"}), method: "patch", remote: true %> | <%= link_to '<i class="fas fa-times"></i>'.html_safe, booking_path(booking, booking: { status: "reject"}), method: 'patch', remote: true %>
+   <p>Want to Play?
+   <div id='confirm'><%= link_to '<i class="fas fa-check crosstick"></i>'.html_safe, booking_path(booking, booking: { status: "confirm"}), method: "patch", remote: true %>  <%= link_to '<i class="fas fa-times crosstick"></i>'.html_safe, booking_path(booking, booking: { status: "reject"}), method: 'patch', remote: true %></div>
    <% end%>
   </div>
 
