@@ -1,9 +1,13 @@
 <div class="banner">
   <%= image_tag 'soccer-transparent.png', class:'banner-img' %>
+  <%- if !user_signed_in? %>
   <div id="typed"></div>
   <div id="signup-btn">
-  <%- if !user_signed_in? %>
-    <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary btn-lg btn-signup animate__animated animate__bounce' %><br />
+    <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary btn-lg btn-signup animate__animated animate__bounce' %>
+  <% else%>
+    <div id="signup-btn">
+      <%= link_to 'Choose a sport to play', new_availability_path, class: 'btn btn-primary btn-lg btn-signup animate__animated animate__bounce' %>
+    </div>
   <% end %>
   </div>
 </div>

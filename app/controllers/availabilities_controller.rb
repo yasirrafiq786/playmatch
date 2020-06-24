@@ -15,11 +15,12 @@ class AvailabilitiesController < ApplicationController
   end
 
   def create
+    @sport = Sport.find( params[:availability][:sport_id])
     @availability = Availability.new(availability_params)
     @user = current_user
     @availability.user = current_user
     if @availability.save
-      redirect_to availabilities_path
+      redirect_to sport_availabilities_path(@sport)
     else
       render :new
     end
