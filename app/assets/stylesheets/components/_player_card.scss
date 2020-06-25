@@ -9,6 +9,8 @@
   margin-bottom: 16px;
   font-size: 16px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 .profile-container h6 {
@@ -21,7 +23,7 @@
   // text-align: center;
 
   padding: 4px;
-  display: flex;
+  // display: flex;
   justify-content: space-between;
   p {
     margin: 0;
@@ -99,4 +101,14 @@
 
 .search {
   width: 80vw;
+}
+
+.sport-mini-banner{
+  img {
+    width: 100vw;
+  }
+
+  h4 {
+    width: 90vw;
+  }
 }
