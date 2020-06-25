@@ -8,9 +8,9 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h2><%= availability.user.first_name %></h2>
-              <p> <%= link_to 'Play with Me',  new_availability_booking_path(availability),
-                   class: "button-style" %> </p>
+            <h2 style="margin-bottom: 16px;"><%= availability.user.first_name %></h2>
+            <p> <%= link_to 'Play with Me',  new_availability_booking_path(availability),
+                 class: "button-style", style: "font-size: 16px; font-weight: bold;" %> </p>
             <div>
               <i class="fas fa-map-marker-alt"></i> 4.3 km  <i class="fas fa-heart"></i> <%= availability.sport.name %>
             </div>
@@ -20,18 +20,21 @@
             </div>
             <div class="reviews">
               <h3>Reviews</h3>
-              <% if availability.user.reviewees.length > 0 %>
-                <% availability.user.reviewees.each do |review| %>
-                  <% count = 0 %>
-                  <% while count != review.rating %>
-                    <% count += 1 %>
-                    <i class="fas fa-star"></i>
+              <div class="review">
+                <% if availability.user.reviewees.length > 0 %>
+                  <% availability.user.reviewees.each do |review| %>
+                    <% count = 0 %>
+                    <% while count != review.rating %>
+                      <% count += 1 %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
+                    <!-- <%= availability.user.first_name %> -->
+                    <%= review.content %>
                   <% end %>
-                  <%= review.content %>
+                <% else %>
+                  <p>No reviews yet.</p>
                 <% end %>
-              <% else %>
-                <p>No reviews yet.</p>
-              <% end %>
+              </div>
             </div>
           </div>
         </div>
