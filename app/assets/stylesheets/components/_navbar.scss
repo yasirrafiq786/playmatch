@@ -1,9 +1,13 @@
-.navbar-lewagon a{
-  justify-content: space-between;
-  background: transparent;
+.navbar-lewagon {
+  background: whitesmoke;
   position: sticky;
   top: 0px;
   z-index: 10;
+}
+
+.navbar-lewagon a{
+  justify-content: space-between;
+  
   color: black;
 }
 
