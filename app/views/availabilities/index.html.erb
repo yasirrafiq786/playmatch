@@ -1,3 +1,4 @@
+<!-- Modal body -->
 <% @availabilities.each do |availability|%>
   <div class="modal fade" id='modal<%= availability.id %>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -7,24 +8,33 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h2><%= availability.user.first_name %></h2>
-            <%= link_to "#" do %>
-              <i class="fas fa-comments fa-lg"></i>
-            <% end%>
+            <h2 style="margin-bottom: 16px;"><%= availability.user.first_name %></h2>
+            <p> <%= link_to 'Play with Me',  new_availability_booking_path(availability),
+                 class: "button-style", style: "font-size: 16px; font-weight: bold;" %> </p>
+            <div>
+              <i class="fas fa-map-marker-alt"></i> <%= rand(1..6) %> km  <i class="fas fa-heart"></i> <%= availability.sport.name %>
+            </div>
+            <div class = "right-player-details">
+              <i class="fas fa-clock"></i>
+              <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
+            </div>
             <div class="reviews">
               <h3>Reviews</h3>
-              <% if availability.user.reviewees.length > 0 %>
-                <% availability.user.reviewees.each do |review| %>
-                  <%= review.content %>
-                  <% count = 0 %>
-                  <% while count != review.rating %>
-                    <% count += 1 %>
-                    <i class="fas fa-star"></i>
+                <% if availability.user.reviewees.length > 0 %>
+                  <% availability.user.reviewees.each do |review| %>
+                    <div class="review">
+                      <% count = 0 %>
+                      <% while count != review.rating %>
+                        <% count += 1 %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                      <!-- <%= availability.user.first_name %> -->
+                      <%= review.content %>
+                    </div>
                   <% end %>
+                <% else %>
+                  <p>No reviews yet.</p>
                 <% end %>
-              <% else %>
-                <p>No reviews yet.</p>
-              <% end %>
             </div>
           </div>
         </div>
@@ -32,43 +42,67 @@
     </div>
   </div>
 <% end%>
-<h6 class="avail-heading">Pick Your Competition</h6>
-  <%= simple_form_for( :search, url: sport_availabilities_path(@sport), method: :get) do |f| %>
+
+<!-- Header and filtering -->
+<div class="sport-mini-banner">
+  <%= cl_image_tag(@sport.photo.key, height: 150, width: 400, crop: :fill) %>
+  <h4 class="sport-mini-banner-heading"><%= @sport.name %></h4>
+</div>
+<h6 class="avail-heading">Who will you play with?</h6>
+<%= simple_form_for( :search, url: sport_availabilities_path(@sport), method: :get) do |f| %>
+  <div>
     <div>
-      <div>
-        <%= f.input :skill, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline %>
-      </div>
-      <div>
-        <%= f.button :button, "Filter by player's skill", class: "form-control btn-primary btn btn-block" %>
-      </div>
+      <%= f.input :skill, as: :radio_buttons, collection: 1..5, wrapper: :vertical_collection_inline, legend_tag: false %>
     </div>
-  <% end%>
+    <div>
+      <%= f.button :button, "Filter by player's skill", class: "button-style btn btn-block" %>
+    </div>
+  </div>
+<% end%>
+
+<!-- Player cards -->
 <% @availabilities.each do |availability|%>
   <span type="button" data-toggle="modal" data-target='#modal<%= availability.id %>'>
-  <div class="avail-container">
-    <div class = "profile-container">
-      <div class = "left-player-details">
-        <div class = "player-skill">
-          <h6 id='player-name'> <%= availability.user.first_name %> </h6>
-          <p><span></i></span>Skill: <%= availability.user.user_sports.find_by(sport: @sport).sport_level %></p>
-        <div class = "middle-player-details">
-          <i class="fas fa-star"></i>   5 reviews
+    <div class="avail-container">
+      <div class = "profile-container">
+        <div class = "left-player-details">
+          <div class = "player-skill">
+            <h6 id='player-name'> <%= availability.user.first_name %> </h6>
+            <p><span></i></span><strong>Skill:</strong> <%= availability.user.user_sports.find_by(sport: @sport).sport_level %></p>
+          <div class = "middle-player-details">
+            <% if availability.user.reviewees.count == 1 %>
+              <% availability.user.reviewees.each do |review| %>
+                <% count = 0 %>
+                <% while count != review.rating %>
+                  <% count += 1 %>
+                <% end %>
+                <% stars = 0 %>
+                <% while stars < count / availability.user.reviewees.count %>
+                  <% stars += 1 %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+              <% end %>
+              (<%= availability.user.reviewees.count %> review)
+            <% elsif availability.user.reviewees.count > 1 %>
+              <% availability.user.reviewees.each do |review| %>
+                <% count = 0 %>
+                <% while count != review.rating %>
+                  <% count += 1 %>
+                <% end %>
+                <% stars = 0 %>
+                <% while stars < count / availability.user.reviewees.count %>
+                  <% stars += 1 %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+              <% end %>
+                (<%= availability.user.reviewees.count %> reviews)
+            <% else %>
+              <i class="far fa-star"></i>
+              (<%= availability.user.reviewees.count %> reviews)
+            <% end %>
+          </div>
         </div>
-        <div>
-          <i class="fas fa-map-marker-alt"></i> 4.3 km  <i class="fas fa-heart"></i><%= availability.sport.name %>
-        </div>
-        <div class = "right-player-details">
-          <i class="fas fa-clock"></i>
-          <%= availability.start_time.strftime("%b %d, %H:%M") %> - <%= availability.end_time.strftime("%b %d, %H:%M") %>
-        </div>
-      </div>
-      <%= cl_image_tag availability.user.avatar.key, crop: :fill, class: "card-avatar"%>
-    </div>
-      <div class="bottom-details">
-        <h6> <%= link_to 'CHALLENGE',  new_availability_booking_path(availability),
-             class: "button-style" %> </h6>
-        <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path,
-              class: "view-profile-icon" %></h6>
+        <%= cl_image_tag availability.user.avatar.key, crop: :fill, class: "card-avatar"%>
       </div>
     </div>
   </span>

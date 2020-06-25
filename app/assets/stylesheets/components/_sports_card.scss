@@ -7,7 +7,7 @@
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0,0,0,0.4);
   width: 90vw;
-  
+
 }
 
 .arrows {
@@ -63,4 +63,18 @@
   text-decoration: none;
   color: black;
   text-shadow: 0 3px 3px rgba(0,0,0,0.4);
+}
+
+.sport-mini-banner {
+  height: 170px;
+}
+
+.sport-mini-banner-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  position: relative;
+  color: white;
+  top: -145px;
+  left: 10px;
+  width: 100%;
 }

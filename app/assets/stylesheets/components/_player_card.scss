@@ -1,5 +1,6 @@
 .profile-container {
   padding: 8px;
+  padding-bottom: 2px;
   width: 100vw;
   background: white;
   border-radius: 4px;
@@ -13,18 +14,18 @@
 .profile-container h6 {
   font-size: 16px;
   margin-bottom: 2px;
-  
+
 }
 
 .left-player-details {
   // text-align: center;
-  
+
   padding: 4px;
   display: flex;
   justify-content: space-between;
   p {
     margin: 0;
-    
+
   }
 }
 
@@ -58,17 +59,14 @@
 .view-profile-icon {
   font-size: 25px;
   color: $black;
-  
- 
+
+
 
 }
 
 .player-skill {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  
-  
 }
 
 .fa-heart {
@@ -76,8 +74,8 @@
 }
 
 .card-avatar {
-  width: 144px;
-  height: 144px;
+  width: 104px;
+  height: 104px;
   border-radius: 0 0 0 50%;
   object-fit: cover;
 }
@@ -90,11 +88,13 @@
 
 #player-name {
   font-size: 30px;
+  padding-bottom: 8px;
 }
 
 .avail-heading {
   text-align: center;
   font-size: 24px;
+  padding-bottom: 8px;
 }
 
 .search {
