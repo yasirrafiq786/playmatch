@@ -10,6 +10,7 @@ class Booking < ApplicationRecord
   validates :date, presence: :true
   # validate :unique_booking?
 
+
   def start_time
     self.date
   end
@@ -18,9 +19,9 @@ class Booking < ApplicationRecord
     active_bookings = Booking.where.not( status: ['conclude', 'reject'] )
     active_bookings.each do |active_booking|
       errors.add(:booking, "must be a unique booking") if  (users.sort == active_booking.users.sort)
-      
+
     end
   end
 
-  
+
 end
