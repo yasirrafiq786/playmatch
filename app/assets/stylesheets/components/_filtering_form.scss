@@ -1,11 +1,10 @@
 .radio_buttons {
-  display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.form-check-inline {
-  margin-right: 0;
+.form-check-inline:not(:last-child) {
+  margin-right: 10%;
 }
 
 input[type="radio"] {

@@ -73,7 +73,7 @@ user_photos = [
   "https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
   "https://images.unsplash.com/photo-1506956191951-7a88da4435e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
   "https://images.unsplash.com/photo-1567612529009-820ed950f3ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-  "https://images.unsplash.com/photo-1551832717-1d4cff3e1834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+  "https://images.unsplash.com/photo-1551832717-1d4cff3e1834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=badminton1350&q=80",
   "https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
   "https://images.unsplash.com/photo-1495846101638-bd8e9a23f8ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
   "https://images.unsplash.com/photo-1487573884658-a5d3c667584e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1292&q=80",
@@ -94,7 +94,7 @@ yasir = User.create!(first_name:"Yasir", email:"yasir@yasir.com", password:"123a
 yasir.user_sports << UserSport.new(sport: badminton, sport_level: 5)
 # yasir.user_sports << UserSport.new(sport: sports_array.first, sport_level: rand(1..5))
 # yasir.user_sports << UserSport.new(sport: sports_array.sample, sport_level: rand(1..5))
-yasir_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: sports_array.first, user: yasir)
+yasir_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: badminton, user: yasir)
 file = URI.open('https://ca.slack-edge.com/T02NE0241-USU0VD7HT-67fef747e03e-512')
 yasir.avatar.attach(io: file, filename: 'avatar.jpeg', content_type: 'image/jpeg')
 
@@ -103,7 +103,7 @@ sleep(2)
 andy = User.create!(first_name:"Andy", email:"andy@andy.com", password:"123abc")
 andy.user_sports << UserSport.new(sport: badminton, sport_level: 5)
 # andy.user_sports << UserSport.new(sport: sports_array.first, sport_level: rand(1..5))
-andy_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: sports_array.first, user: andy)
+andy_availability = Availability.create!(start_time:Date.today, end_time:Date.today+1, sport: badminton, user: andy)
 file = URI.open('https://ca.slack-edge.com/T02NE0241-USHR54MED-a02761655437-512')
 andy.avatar.attach(io: file, filename: 'avatar.jpeg', content_type: 'image/jpeg')
 
