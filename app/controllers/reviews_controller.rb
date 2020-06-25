@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    
+
     def index
         @reviews = Review.all
     end
@@ -20,13 +20,13 @@ class ReviewsController < ApplicationController
             end
         end
         if @review.save
-            redirect_to reviews_path
+            redirect_to root_path
         else
             render :new
         end
     end
 
-    
+
 
     private
 
