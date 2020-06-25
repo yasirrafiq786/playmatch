@@ -1,14 +1,17 @@
 <p id="booking-heading">Upcoming Challenges<p>
 
 <% @bookings.each do |booking| %>
+<% if booking.users.include?(current_user)%>
 <div class = "booking-container">
 
   <div class = "left-booking-details">
+    
     <% booking.users.each do |user|%>
       <% if user != current_user  %>
         <%= cl_image_tag user.avatar.key, crop: :fit, id: "booking-avatar" %>
       <% end%>
     <% end%>
+    
   </div>
 
   <div class = "middle-booking-details">
@@ -32,5 +35,6 @@
   </div>
 
 </div>
+<% end%>
 <% end %>
 
