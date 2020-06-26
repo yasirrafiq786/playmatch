@@ -1,0 +1,40 @@
+.bookings-form-container {
+  padding: 8px;
+  padding-bottom: 2px;
+  width: 100vw;
+  height:  45vw;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-top: 5vw;
+  font-size: 16px;
+  display: flex;
+}
+.bookings-title {
+margin-left: 4vw;
+margin-top: 4vw;
+}
+
+.bookings-content-container{
+ width: 80vw;
+ margin-left: 5vw;
+ margin-top: 2vw;
+}
+
+.booking-title {
+margin-left: 4vw;
+margin-top: 4vw;
+}
+
+.bookings-btn-placement {
+  margin-top: 5vw;
+margin-left: 25vw;
+ border-radius: 30px;
+ padding: .4rem .8rem;
+    color: white;
+    background-color: $black;
+    border-radius: 30px;
+    font-family: $body-font;
+    letter-spacing: 2px;
+}

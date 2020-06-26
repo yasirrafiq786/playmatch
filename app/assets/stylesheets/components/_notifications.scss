@@ -20,9 +20,9 @@
 
 .close-overlay {
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 0;
-  font-size: 40px;
+  font-size: 30px;
   margin-right: 5vw;
 }
 
@@ -32,11 +32,17 @@
  right: 0;
  border-radius: 30px;
  padding: .1rem .8rem;
+    color: white;
+    background-color: $black;
+    border-radius: 30px;
+    font-family: $body-font;
+    letter-spacing: 2px;
 }
 
 .notifications-heading {
   color: black;
   border-bottom: 2px solid black;
+  margin: 1vw;
 }
 
 .notifications-message-box {
