@@ -135,28 +135,9 @@ end
 end
 
 #Match bookings
-puts "Creating matches"
+puts "Creating matches and reviews"
 booking_array = []
 
-booking1 = Booking.create!(sport: sports_array.last, status: 'pending', date: Date.today)
-booking1.users = [yasir, andy]
-
-106.times do
-  booking = Booking.create!(sport: sports_array.sample, status: 'pending', date: Date.today)
-  booking.users = [user_array.sample, user_array.sample]
-  booking_array << booking
-end
-
-#Post-match reviews of other users
-puts "Creating reviews"
-
-review1 = Review.create!(content:"This guy was great, after the match he got me drunk and carried me home.", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
-review2 = Review.create!(content:"I had pure fun while playing but he kept on stop playing to yell at pigeons ", rating:4, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
-review3 = Review.create!(content:"The guy was super fast, told me he is Hulk's personal trainer", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
-
-review4 = Review.create!(content:"A total whinner!!! kicked a big stink everytime dropped a point. Had to pay him to calm him down", rating:2, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
-review5 = Review.create!(content:"Great fun, quick to reply", rating:3, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
-review6 = Review.create!(content:"Had too much fun. I liked him so much that now he is living in my house", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
 review_content = ["Awesome game, punctual",
   "Great fun, quick to reply",
   "Skill matches their stated level",
@@ -180,8 +161,27 @@ review_content = ["Awesome game, punctual",
 ]
 
 100.times do
-  review = Review.create!(content: review_content.sample, rating: rand(4..5), reviewer: user_array.sample, reviewee: user_array.sample, booking: booking_array.sample)
+  booking = Booking.create!(sport: sports_array.sample, status: 'pending', date: Date.today)
+  booking.users = [user_array.sample, user_array.sample]
+  Review.create!(content: review_content.sample, rating: rand(4..5), reviewer: user_array.sample, reviewee: user_array.sample, booking: booking)
+  
 end
+
+#Post-match reviews of other users
+
+
+# review1 = Review.create!(content:"This guy was great, after the match he got me drunk and carried me home.", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+# review2 = Review.create!(content:"I had pure fun while playing but he kept on stop playing to yell at pigeons ", rating:4, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+# review3 = Review.create!(content:"The guy was super fast, told me he is Hulk's personal trainer", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+
+# review4 = Review.create!(content:"A total whinner!!! kicked a big stink everytime dropped a point. Had to pay him to calm him down", rating:2, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+# review5 = Review.create!(content:"Great fun, quick to reply", rating:3, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+# review6 = Review.create!(content:"Had too much fun. I liked him so much that now he is living in my house", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+
+
+# 100.times do
+#   review = Review.create!(content: review_content.sample, rating: rand(4..5), reviewer: user_array.sample, reviewee: user_array.sample, booking: booking_array.sample)
+# end
 
 
 
