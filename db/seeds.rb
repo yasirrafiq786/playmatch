@@ -157,7 +157,6 @@ review3 = Review.create!(content:"The guy was super fast, told me he is Hulk's p
 review4 = Review.create!(content:"A total whinner!!! kicked a big stink everytime dropped a point. Had to pay him to calm him down", rating:2, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
 review5 = Review.create!(content:"Great fun, quick to reply", rating:3, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
 review6 = Review.create!(content:"Had too much fun. I liked him so much that now he is living in my house", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
-
 review_content = ["Awesome game, punctual",
   "Great fun, quick to reply",
   "Skill matches their stated level",
