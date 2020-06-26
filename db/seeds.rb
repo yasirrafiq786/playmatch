@@ -172,15 +172,15 @@ review_content = ["Awesome game, punctual",
 ]
 
 100.times do
-  review = Review.create!(content: review_content.sample, rating: rand(2..5), reviewer: user_array.sample, reviewee: user_array.sample, booking: booking_array.sample)
+  review = Review.create!(content: review_content.sample, rating: rand(4..5), reviewer: user_array.sample, reviewee: user_array.sample, booking: booking_array.sample)
 end
 
-review1 = Review.create!(content:"Awesome game, punctual", rating:4, reviewer: user_array.sample, reviewee: yasir, booking: booking_array.sample)
-review2 = Review.create!(content:"Had a fun, social game, would play again!", rating:4, reviewer: user_array.sample, reviewee: yasir, booking: booking_array.sample)
-review3 = Review.create!(content:"Player's skill matched mine", rating:5, reviewer: user_array.sample, reviewee: yasir, booking: booking_array.sample)
+review1 = Review.create!(content:"This guy was great, after the match he got me drunk and carried me home.", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+review2 = Review.create!(content:"I had pure fun while playing but he kept on stop playing to yell at pigeons ", rating:4, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+review3 = Review.create!(content:"The guy was super fast, told me he is Hulk's personal trainer", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
 
-review4 = Review.create!(content:"Good match of skills", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+review4 = Review.create!(content:"A total whinner!!! kicked a big stink everytime dropped a point. Had to pay him to calm him down", rating:2, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
 review5 = Review.create!(content:"Great fun, quick to reply", rating:3, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
-review6 = Review.create!(content:"Highly competitive game", rating:4, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
+review6 = Review.create!(content:"Had too much fun. I liked him so much that now he is living in my house", rating:5, reviewer: user_array.sample, reviewee: andy, booking: booking_array.sample)
 
 puts "Finished seeding"
