@@ -1,12 +1,13 @@
 .page-container {
-    height: 94vh;
+    height: 640px;
+    width: 360px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 .messages-container {
     padding: 4px;
-    
+    margin-bottom: 10px;
     
 }
 
@@ -56,7 +57,7 @@
 
 .message-input {
     position: sticky;
-    bottom: 44px;
+    bottom: 38px;
 }
 
 #other-user {
