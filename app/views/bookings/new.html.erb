@@ -1,5 +1,14 @@
+<h1 class = "bookings-title">
+  Make a booking
+<h1>
 
-<%= simple_form_for [@availability, @booking] do |f| %>
-<%= f.input :date, as: :string, input_html: { class: "flat-pickr"}%>
-<%= f.button :submit %>
-<% end%>
+<div class = "bookings-form-container">
+  <%= simple_form_for [@availability, @booking] do |f| %>
+    <div class = "bookings-content-container" >
+      <%= f.input :date, as: :string, input_html: { class: "flat-pickr"}%>
+    </div>
+    <div class = "bookings-submit-button">
+      <%= f.button :submit, class: 'btn btn-primary bookings-btn-placement' %>
+    </div>
+  <% end%>
+</div>
