@@ -1,0 +1,17 @@
+<p><%= link_to 'Make Myself Available',  new_availability_path %></p>
+<p><%= link_to 'List of Available Player', availabilities_path %></p>
+<p><%= link_to 'Booking', bookings_path %></p>
+<p><%= link_to 'Review', reviews_path %></p>
+<p><%= link_to 'List of Players (per sport)', sports_path %></p>
+
+<%= form_tag sports_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control", id: 'search-input', data: {algoliaId: ENV["ALGOLIA_APPLICATION_ID"], algoliaSearchKey: ENV["ALGOLIA_APPLICATION_FRONTEND_API_KEY"] },
+    placeholder: "Find a sport" 
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+

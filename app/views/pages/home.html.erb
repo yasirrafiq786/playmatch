@@ -1,2 +1,66 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <%= render 'shared/banner', sport: @sport %>
+</div>
+
+<div class="how-box-container">
+  <div id="how-box-1-container">
+    <div class="how-box-1">
+      <p class = homepage-icons> <i class="fas fa-search"></i> </i> </p>
+      <div class="card-text">
+        <h1 class = "how-box-heading"> SEARCH THE SPORT YOU LOVE </h1>
+        <p class = "how-box-body"> Just tap search, find the sport you love, and see who is available. </p>
+      </div>
+    </div>
+      
+        <div class="search">
+          <%= form_tag sports_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control", id: 'search-input', data: {algoliaId: ENV["ALGOLIA_APPLICATION_ID"], algoliaSearchKey: ENV["ALGOLIA_APPLICATION_FRONTEND_API_KEY"] },
+            placeholder: "Find a sport" %>
+          <% end %> 
+        </div>
+      
+  </div>
+  
+  
+
+  <div class="how-box">
+    <div class="card-text">
+      <h1 class = "how-box-heading"> FIND AVAILABLE PLAYERS </h1>
+      <p class = "how-box-body"> There's bound to be someone who shares the same interest as you. </p>
+    </div>
+    <p class = homepage-icons> <i class="fas fa-user"></i> </i> </p>
+  </div>
+
+  <div class="how-box">
+    <p class = homepage-icons> <i class="fas fa-heart"></i> </p>
+    <div class="card-text">
+      <h1 class = "how-box-heading"> ENJOY THE SPORT </h1>
+      <p class = "how-box-body"> Enjoy the beautiful sport together. Afterwards, leave a review and who knows, maybe you'll play again! </p>
+    </div>
+  </div>
+</div>
+
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <% @sports.each do |sport| %>
+            <div class="swiper-slide"><%= render 'shared/sports_card', sport: sport %></div>
+        <% end %>
+    </div>
+
+    <div class="swiper-pagination"></div>
+    
+</div>
+
+  
+
+
+
+
+
+
+

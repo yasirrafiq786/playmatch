@@ -1,0 +1,80 @@
+.sports-card {
+  width: 90vw;
+  margin-bottom: 8px;
+}
+
+.sports-card img {
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+  width: 90vw;
+
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  top: 120px;
+  color: white;
+  font-size: 24px;
+  padding: 0 10px 0px 10px;
+}
+
+.arrow-left {
+  flex: 0;
+}
+
+.arrow-right {
+  flex: 0;
+}
+
+.sports-card-header {
+  position: relative;
+}
+
+.sports-card-body {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.body-heading {
+  margin-left: 10px;
+}
+
+.sports-card h4 {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  top: 15px;
+  left: 10px;
+  width: 100%;
+}
+
+.sports-card a {
+  font-size: 18px;
+  color: black;
+  text-transform: uppercase;
+}
+
+.sports-card a:hover {
+  text-decoration: none;
+  color: black;
+  text-shadow: 0 3px 3px rgba(0,0,0,0.4);
+}
+
+.sport-mini-banner {
+  height: 170px;
+}
+
+.sport-mini-banner-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  position: relative;
+  color: white;
+  top: -145px;
+  left: 10px;
+  width: 100%;
+}

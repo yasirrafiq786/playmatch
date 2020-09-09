@@ -1,0 +1,29 @@
+.radio_buttons {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-check-inline:not(:last-child) {
+  margin-right: 8%;
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  display:none;
+}
+
+.collection_radio_buttons{
+  border-radius: 18px;
+  border: 2px solid black;
+  font-size: 14px;
+  text-align: center;
+  padding: 6px 0px;
+  width: 36px;
+  background-color: white;
+  font-weight: 700;
+}
+
+input[type="radio"]:checked + label {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,114 @@
+.profile-container {
+  padding: 8px;
+  padding-bottom: 2px;
+  width: 100vw;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-bottom: 16px;
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-container h6 {
+  font-size: 16px;
+  margin-bottom: 2px;
+
+}
+
+.left-player-details {
+  // text-align: center;
+
+  padding: 4px;
+  // display: flex;
+  justify-content: space-between;
+  p {
+    margin: 0;
+
+  }
+}
+
+.middle-player-details {
+  color: $black;
+  margin-top: 8px;
+  margin-bottom: 10px;;
+  line-height: 15pt;
+}
+
+.right-player-details {
+  color: $black;
+  margin: 10px 0;
+  padding: 0;
+  line-height: 15pt;
+}
+
+.button-style{
+    padding: 6px 12px;
+    color: white;
+    background-color: $black;
+    border-radius: 30px;
+    font-family: $body-font;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+.view-profile-icon {
+  font-size: 25px;
+  color: $black;
+
+
+
+}
+
+.player-skill {
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-heart {
+  margin-left: 10px;
+}
+
+.card-avatar {
+  width: 104px;
+  height: 104px;
+  border-radius: 0 0 0 50%;
+  object-fit: cover;
+}
+
+.bottom-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#player-name {
+  font-size: 30px;
+  padding-bottom: 8px;
+}
+
+.avail-heading {
+  text-align: center;
+  font-size: 24px;
+  padding-bottom: 8px;
+}
+
+.search {
+  width: 80vw;
+}
+
+.sport-mini-banner{
+  img {
+    width: 100vw;
+  }
+
+  h4 {
+    width: 90vw;
+  }
+}

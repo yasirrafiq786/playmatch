@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+<nav>
+  <ul class = "nav-display">
+    <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-home fas-footer"></i>').html_safe, root_path %> </li>
+    <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-comments fas-footer"></i>').html_safe %> </li>
+    <li class = "nav-link-style"> <i class="fas fa-bell fas-footer"></i></li>
+    <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-calendar-alt fas-footer"></i>').html_safe, bookings_path %> </li>
+  </ul>
+</nav>
+<% end%>

@@ -1,0 +1,7 @@
+<h1>Availabilities#new</h1>
+<%= simple_form_for @availability do |f| %>
+  <%= f.input :start_time, as: :datetime %>
+  <%= f.input :end_time, as: :datetime %>
+  <%= f.association :sport, label: "Choose a Sport", prompt: "Choose One" %>
+  <%= f.button :submit %>
+<% end%>

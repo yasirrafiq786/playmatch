@@ -1,0 +1,8 @@
+<div class="container-fluid py-4">
+  <div class="sports-card">
+    <div class="sports-card-header">
+      <%= link_to cl_image_tag(sport.photo.key, height: 300, width: 400, crop: :fill), sport_availabilities_path(sport) %>
+      <h4 class="card-title"><%= sport.name.upcase %></h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.profile-overlay-container {
+  padding: 2vw;
+  width: 400px;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  margin: auto;
+  margin-bottom: 2vw;
+  margin-top: 4vw;
+}
+
+.name-box {
+  text-align: center;
+}
+
+.name-box a {
+  font-size: 24px;
+}
+
+.reviews {
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #454545;
+}
+
+.review {
+  text-align: left;
+  margin: 8px;
+}

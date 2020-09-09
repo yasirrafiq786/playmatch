@@ -1,0 +1,144 @@
+#Notifications (Overlay)
+
+<div class = "notifications-container">
+ <div class = "close-overlay">
+    X
+  </div>
+
+  <h1 class = "notifications-heading">
+    Notifications
+  </h1>
+
+  <div class = "notifications-message-box">
+    <h6 class = "message-subject">
+      Leave a Review
+    </h6>
+    <button type="button" class="btn btn-primary btn-placement">Review</button>
+    <div class = "message-content">
+      <p>
+        How was your game with Andy yesterday?
+        Please feel free to leave a review.
+      </p>
+    </div>
+  </div>
+  <div class = "notifications-message-box">
+    <h6 class = "message-subject">
+      Leave a Review
+    </h6>
+    <button type="button" class="btn btn-primary btn-placement">Review</button>
+    <div class = "message-content">
+      <p>
+        How was your game with Markus yesterday?
+        Please feel free to leave a review.
+      </p>
+    </div>
+  </div>
+  <div class = "notifications-message-box">
+    <h6 class = "message-subject">
+      Leave a Review
+    </h6>
+    <button type="button" class="btn btn-primary btn-placement">Review</button>
+    <div class = "message-content">
+      <p>
+        How was your game with Markus yesterday?
+        Please feel free to leave a review.
+      </p>
+    </div>
+  </div>
+  <div class = "notifications-message-box">
+    <h6 class = "message-subject">
+      Leave a Review
+    </h6>
+    <button type="button" class="btn btn-primary btn-placement">Review</button>
+    <div class = "message-content">
+      <p>
+        How was your game with Markus yesterday?
+        Please feel free to leave a review.
+      </p>
+    </div>
+  </div>
+  <div class = "notifications-message-box">
+    <h6 class = "message-subject">
+      Leave a Review
+    </h6>
+    <button type="button" class="btn btn-primary btn-placement">Review</button>
+    <div class = "message-content">
+      <p>
+        How was your game with Markus yesterday?
+        Please feel free to leave a review.
+      </p>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+#Profile Card (ShowPage)
+<div class = "profile-container">
+  <div class = "left-player-details">
+    <h6> Player Name </h6>
+    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="45px">
+    <div class = "player-skill">
+      <h6> Player Skill: </h6>
+      <p> Intermediate </p>
+    </div>
+  </div>
+  <div class = "right-player-details">
+    <p> <i class="fas fa-star"></i> 3.5 (5 reviews) </p>
+    <p> <i class="fas fa-map-marker-alt"></i> 4.3 km </p>
+    <h6> <%= link_to '<i class="fas fa-search-plus"></i>'.html_safe, bookings_path %></h6>
+    <h6> <%= link_to 'Book', bookings_path, class: "button-style" %> </h6>
+  </div>
+</div>
+
+
+
+#How-it-Works
+<div>
+  <div class="how-box">
+    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="100px">
+    <div class="card-text">
+      <h1 class = "how-box-heading"> SEARCH THE SPORT YOU LOVE </h1>
+      <p class = "how-box-body"> Just tap search, find the sport you love, and see who is available. </p>
+    </div>
+  </div>
+
+  <div class="how-box">
+    <div class="card-text">
+      <h1 class = "how-box-heading"> FIND AVAILABLE PLAYERS </h1>
+      <p class = "how-box-body"> There's bound to be someone who shares the same interest as you. </p>
+    </div>
+    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="100px">
+  </div>
+
+  <div class="how-box">
+    <img src= <%= asset_path "logo.png" %> alt="placeholder" height="100px">
+    <div class="card-text">
+      <h1 class = "how-box-heading"> ENJOY THE SPORT </h1>
+      <p class = "how-box-body"> Enjoy the beautiful sport together. Afterwards, leave a review and who knows, maybe you'll play again! </p>
+    </div>
+  </div>
+</div>
+
+<!-- Bottom-Nav -->
+<nav>
+  <ul class = "nav-display">
+    <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-home"></i>').html_safe, root_path %> </li>
+    <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-comments"></i>').html_safe %> </li>
+    <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-bell"></i>').html_safe %> </li>
+    <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-calendar-alt"></i>').html_safe, bookings_path %> </li>
+    <li class = "nav-link-style"> <%= link_to ('<i class="fas fa-cog"></i>').html_safe %> </li>
+  </ul>
+</nav>
+
+
+
+
+

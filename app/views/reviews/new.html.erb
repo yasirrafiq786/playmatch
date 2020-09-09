@@ -1,0 +1,12 @@
+<h1 class = "review-title">
+  Leave a review...
+<h1>
+  <div class = "reviews-form-container">
+    <%= simple_form_for [@booking, @review] do |f| %>
+      <div class = "reviews-content-container" >
+        <%= f.input :content, as: :text %>
+        <%= f.input :rating, collection: 1..5 %>
+      </div>
+        <%= f.button :submit, class: 'btn btn-primary reviews-btn-placement' %>
+    <% end%>
+  </div>

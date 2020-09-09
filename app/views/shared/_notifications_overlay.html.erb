@@ -1,0 +1,26 @@
+<% if user_signed_in?%>
+<div class = "notifications-container">
+ <div class = "close-overlay">
+    X
+  </div>
+
+  <h1 class = "notifications-heading">
+    Notifications
+  </h1>
+  <% current_user.bookings.each do |booking|  %>
+  <div class = "notifications-message-box">
+    <h6 class = "message-subject">
+      Leave a Review
+    </h6>
+    <%= link_to "Review", new_booking_review_path(booking), class: "btn btn-primary btn-placement"  %>
+    <div class = "message-content">
+      <p>
+
+        Please remember to leave a review for <%= current_user == booking.users.first ? booking.users.second.first_name : booking.users.first.first_name  %>. Enjoy your match!
+
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end%>

@@ -1,0 +1,65 @@
+.notifications-container {
+  padding: 2vw;
+  width: 340px;
+  height: 650px;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  margin: auto;
+  margin-bottom: 2vw;
+  font-size: 8px;
+  pointer-events: none;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    z-index: 100;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.close-overlay {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  font-size: 30px;
+  margin-right: 5vw;
+}
+
+.btn-placement{
+ position: absolute;
+ bottom: 5px;
+ right: 0;
+ border-radius: 30px;
+ padding: .1rem .8rem;
+    color: white;
+    background-color: $black;
+    border-radius: 30px;
+    font-family: $body-font;
+    letter-spacing: 2px;
+}
+
+.notifications-heading {
+  color: black;
+  border-bottom: 2px solid black;
+  margin: 1vw;
+}
+
+.notifications-message-box {
+  width: 320px;
+  height: 25vw;
+  padding: 2vw;
+  border-bottom: 2px solid black;
+  position: relative;
+}
+
+.message-subject {
+  font-size: 14px;
+  margin-top: 1vw;
+}
+
+.message-content {
+  font-size: 12px;
+  width: 50vw;
+}
+
